@@ -62,7 +62,7 @@ export const Hero: FC<HeroPropsType> = () => {
       : `${seconds}`
     : "00";
 
-  const timerText = `${timerMonth} ${timerDays} ${timerTimes}:${timerMinutes}:${timerSeconds} to winter`;
+  const timerText = `${timerMonth} ${timerDays} ${timerTimes}:${timerMinutes}:${timerSeconds} until winter`;
 
   return (
     <Container>
@@ -75,13 +75,22 @@ export const Hero: FC<HeroPropsType> = () => {
 const Container = styled.div``;
 
 const Text = styled.p`
-  font-size: 50px;
+  font-size: 3.472vw;
   color: #6e452d;
   font-weight: 700;
   text-transform: uppercase;
+
+  @media screen and (max-width: 768px) {
+    font-size: 7vw;
+  }
 `;
+
 const Title = styled.h2`
-  font-size: 25px;
+  font-size: 1.736vw;
   color: #6e452d;
-  margin-bottom: 10px;
+  margin-bottom: 0.694vw;
+
+  @media screen and (max-width: 768px) {
+    font-size: 4vw;
+  }
 `;

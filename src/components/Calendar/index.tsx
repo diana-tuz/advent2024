@@ -25,7 +25,11 @@ const Container = styled.div`
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 1.042vw;
   justify-content: start;
   margin: 0 auto;
+  width: 90%;
+  @media screen and (max-width: 768px) {
+    gap: 2vw;
+  }
 `;

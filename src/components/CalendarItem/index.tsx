@@ -6,13 +6,24 @@ import { images } from "../../assets";
 import { CalendarItemPropsType } from "./types";
 
 export const CalendarItem: FC<CalendarItemPropsType> = ({ day }) => {
-  // const today = new Date().toLocaleDateString();
+  // const isWinter = new Date().getMonth().toString() === "1";
   const todayDate = new Date().getDate().toString();
   // const todayDate = "6";
   const currentDate = day.split("/")[1];
   const isDisabled = +currentDate > +todayDate;
-  const lightsArray = Array(5).fill(0);
-  const colors = ["#ec4141", "#00ff00", "#00f", "#e1f00f", "#f557f5"];
+  const lightsArray = Array(10).fill(0);
+  const colors = [
+    "#ec4141",
+    "#00ff00",
+    "#00f",
+    "#e1f00f",
+    "#f557f5",
+    "#ec4141",
+    "#00ff00",
+    "#00f",
+    "#e1f00f",
+    "#f557f5",
+  ];
   const isStClaus = "6" === currentDate;
   const isCristmasEve = "24" === currentDate;
   const isCristmas = "25" === currentDate;
@@ -32,7 +43,7 @@ export const CalendarItem: FC<CalendarItemPropsType> = ({ day }) => {
       disabled={isDisabled}
     >
       <Message $isDisplayed={isDisplayed}>
-        <p>It's not a winter jet! Plase, wait a little bit!</p>
+        <p>It's not winter yet! Please, wait a little bit!</p>
       </Message>
 
       <Datew
@@ -61,57 +72,68 @@ export const CalendarItem: FC<CalendarItemPropsType> = ({ day }) => {
 const Message = styled.div<{ $isDisplayed: boolean }>`
   position: absolute;
   background-color: snow;
-  padding: 10px;
+  padding: 0.694vw;
   right: 0;
-  width: 150px;
+  width: 9.806vw;
   border-radius: 0 28px 28px 28px;
   z-index: 12;
   color: #3b503d;
   opacity: ${({ $isDisplayed }) => ($isDisplayed ? 1 : 0)};
   transition: opacity ease-in 1s;
+
+  @media screen and (max-width: 768px) {
+    width: 22vw;
+    padding: 1vw;
+  }
 `;
 const Container = styled.button<{
   $isSelectedDay: boolean;
   $isHoliday: boolean;
 }>`
   align-items: center;
+  background: #3b503d;
   border: ${({ $isHoliday }) => $isHoliday && "5px dashed snow"};
   border: ${({ $isSelectedDay }) => ($isSelectedDay ? "5px dotted red" : "")};
   display: flex;
-  height: 150px;
-  justify-content: center;
-  align-items: center;
-  width: 170px;
-  background: #3b503d;
-  position: relative;
-  overflow: hidden;
   flex-direction: column;
+  height: 8.417vw;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 9.806vw;
+  @media screen and (max-width: 768px) {
+    width: 25vw;
+    height: 15vh;
+  }
 `;
 const Datew = styled.p<{
   $isSelectedDay: boolean;
   $isHoliday: boolean;
 }>`
-  font-size: 55px;
+  font-size: 3.819vw;
   color: ${({ $isSelectedDay }) => ($isSelectedDay ? "snow" : "#b62022")};
   z-index: 2;
   text-shadow: ${({ $isHoliday }) => $isHoliday && "0 0 6px snow"};
+  @media screen and (max-width: 768px) {
+    font-size: 9vw;
+  }
 `;
 
 const Lights = styled.div`
   position: absolute;
-  top: 10px;
+  top: 0.694vw;
   left: 0;
   display: flex;
   gap: 25px;
-  padding: 0 10px;
+  padding: 0 0.694vw;
   flex-wrap: nowrap;
 `;
 const Light = styled.div`
   border-radius: 3px;
   display: block;
   content: "";
-  width: 10px;
-  height: 10px;
+  width: 0.694vw;
+  height: 0.694vw;
   background-color: #31302e;
   position: relative;
 
@@ -168,18 +190,21 @@ const Item = styled.div<{ $delay: number; $color: string }>`
   animation-delay: ${({ $delay }) => `${$delay}s`};
   background-color: ${({ $color }) => $color};
   border-radius: 50%;
-  box-shadow: 0 0 10px ${({ $color }) => $color};
+  box-shadow: 0 0 0.694vw ${({ $color }) => $color};
 `;
 
 const Image = styled.img`
-  width: 65px;
+  width: 3.5vw;
   z-index: 0;
   position: absolute;
   bottom: 3px;
   right: 0;
+  @media screen and (max-width: 768px) {
+    width: 8vw;
+  }
 `;
 
 const Text = styled.p`
-  font-size: 20px;
+  font-size: 1.389vw;
   color: snow;
 `;

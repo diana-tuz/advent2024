@@ -13,8 +13,6 @@ function App() {
     $randomDelay: Math.random() * 5,
   }));
 
-  console.log(snows);
-
   return (
     <Wrapper>
       <Main>
@@ -84,7 +82,7 @@ const Snow = styled.div.attrs<{
 `;
 
 const Main = styled.div`
-  max-width: 1280px;
+  max-width: 89vw;
   width: 90%;
 `;
 
