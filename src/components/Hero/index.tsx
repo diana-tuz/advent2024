@@ -64,16 +64,24 @@ export const Hero: FC<HeroPropsType> = () => {
 
   const timerText = `${timerMonth} ${timerDays} ${timerTimes}:${timerMinutes}:${timerSeconds} to winter`;
 
-  return <Container>{!isWinter && <Text>{timerText}</Text>}</Container>;
+  return (
+    <Container>
+      {!isWinter && <Text>{timerText}</Text>}
+      <Title>Let's make your December unbelievable!</Title>
+    </Container>
+  );
 };
 
-const Container = styled.div`
-  padding: 50px 0;
-`;
+const Container = styled.div``;
 
 const Text = styled.p`
   font-size: 50px;
   color: #6e452d;
   font-weight: 700;
   text-transform: uppercase;
+`;
+const Title = styled.h2`
+  font-size: 25px;
+  color: #6e452d;
+  margin-bottom: 10px;
 `;
