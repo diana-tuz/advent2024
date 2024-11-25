@@ -10,22 +10,22 @@ export const Calendar: FC<CalendarPropsType> = () => {
     return [...Array(limit)].map((_, i) => `12/${i + 1}/2024`);
   }
 
-  const november = generateArray(24);
+  const november = generateArray(31);
 
   return (
     <Container>
       {november.map((day) => (
-        <CalendarItem day={day} />
+        <CalendarItem day={day} key={day} />
       ))}
     </Container>
   );
 };
 
 const Container = styled.div`
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  width: 80vw;
-  justify-content: start;
-  align-items: center;
   gap: 15px;
+  justify-content: start;
+  margin: 0 auto;
 `;
