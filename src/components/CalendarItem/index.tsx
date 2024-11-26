@@ -132,8 +132,8 @@ const Light = styled.div`
   border-radius: 3px;
   display: block;
   content: "";
-  width: 0.694vw;
-  height: 0.694vw;
+  width: 10px;
+  height: 10px;
   background-color: #31302e;
   position: relative;
 
@@ -182,7 +182,7 @@ const Item = styled.div<{ $delay: number; $color: string }>`
   height: 20px;
   border-radius: 40%;
   position: absolute;
-  bottom: -20px;
+  bottom: -18px;
   left: -1px;
   opacity: 0.5;
   animation: ${cristmasLights} ease-in infinite;
