@@ -5,11 +5,11 @@ import styled, { keyframes } from "styled-components";
 import { images } from "../../assets";
 import { CalendarItemPropsType } from "./types";
 
-export const CalendarItem: FC<CalendarItemPropsType> = ({ day }) => {
+export const CalendarItem: FC<CalendarItemPropsType> = ({ day, onClick }) => {
   // const isWinter = new Date().getMonth().toString() === "1";
   const todayDate = new Date().getDate().toString();
   // const todayDate = "6";
-  const currentDate = day.split("/")[1];
+  const currentDate = day;
   const isDisabled = +currentDate > +todayDate;
   const lightsArray = Array(10).fill(0);
   const colors = [
@@ -31,13 +31,13 @@ export const CalendarItem: FC<CalendarItemPropsType> = ({ day }) => {
   const isSelectedDay = todayDate === currentDate;
 
   const [isDisplayed, setIsDisplayed] = useState(false);
-  const onClick = () => {
+  const onClickNowNOtWinter = () => {
     setIsDisplayed(true);
     setTimeout(() => setIsDisplayed(false), 6000);
   };
   return (
     <Container
-      onClick={onClick}
+      onClick={onClick ? onClick : onClickNowNOtWinter}
       $isSelectedDay={isSelectedDay}
       $isHoliday={isStClaus || isNewYear || isCristmas || isCristmasEve}
       disabled={isDisabled}
@@ -101,11 +101,18 @@ const Container = styled.button<{
   overflow: hidden;
   position: relative;
   width: 9.806vw;
+
   @media screen and (max-width: 768px) {
     width: 25vw;
     height: 15vh;
   }
+
+  &:hover {
+    border: 5px dashed #b62022;
+    color: snow;
+  }
 `;
+
 const Datew = styled.p<{
   $isSelectedDay: boolean;
   $isHoliday: boolean;
@@ -114,6 +121,7 @@ const Datew = styled.p<{
   color: ${({ $isSelectedDay }) => ($isSelectedDay ? "snow" : "#b62022")};
   z-index: 2;
   text-shadow: ${({ $isHoliday }) => $isHoliday && "0 0 6px snow"};
+
   @media screen and (max-width: 768px) {
     font-size: 9vw;
   }
