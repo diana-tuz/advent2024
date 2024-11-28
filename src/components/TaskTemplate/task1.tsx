@@ -8,8 +8,12 @@ import { UserDataVariantType } from "../types";
 import { TaskTemplatePropsType } from "./types";
 
 export const Task1: FC<TaskTemplatePropsType> = ({}) => {
+  const variant = "1";
+  const initialUserCode = localStorage.getItem(variant);
   const [userCode, setUserCode] = useState(
-    `function  checkGiftBudget (budget, giftPrices) {
+    initialUserCode
+      ? initialUserCode
+      : `function  checkGiftBudget (budget, giftPrices) {
   /* Add your solution here */
 }`
   );
@@ -90,6 +94,7 @@ export const Task1: FC<TaskTemplatePropsType> = ({}) => {
     result,
     setUserCode,
     userCode,
+    variant,
   };
 
   const description = [
@@ -119,7 +124,7 @@ export const Task1: FC<TaskTemplatePropsType> = ({}) => {
     setUserPresents,
     userBudget,
     toggleIsUserData,
-    variant: "1" as UserDataVariantType,
+    variant: variant as UserDataVariantType,
   };
 
   return (

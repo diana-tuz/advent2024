@@ -7,8 +7,13 @@ import { arraysAreEqual } from "../tools";
 import { TaskTemplatePropsType } from "./types";
 
 export const Task2: FC<TaskTemplatePropsType> = ({}) => {
+  const variant = "2";
+  const initialUserCode = localStorage.getItem(variant);
+
   const [userCode, setUserCode] = useState(
-    `function  niceOrNaughty (threshold, children) {
+    initialUserCode
+      ? initialUserCode
+      : `function  niceOrNaughty (threshold, children) {
   /* Add your solution here */
 }`
   );
@@ -138,6 +143,7 @@ export const Task2: FC<TaskTemplatePropsType> = ({}) => {
     result,
     setUserCode,
     userCode,
+    variant: "2",
   };
 
   const description = [

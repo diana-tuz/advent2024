@@ -7,8 +7,13 @@ import { objectsEqual } from "../tools";
 import { TaskTemplatePropsType } from "./types";
 
 export const Task4: FC<TaskTemplatePropsType> = ({}) => {
+  const variant = "4";
+  const initialUserCode = localStorage.getItem(variant);
+
   const [userCode, setUserCode] = useState(
-    `function  organizeGifts (giftsList) {
+    initialUserCode
+      ? initialUserCode
+      : `function  organizeGifts (giftsList) {
   /* Add your solution here */
 }`
   );
@@ -104,6 +109,7 @@ export const Task4: FC<TaskTemplatePropsType> = ({}) => {
     result,
     setUserCode,
     userCode,
+    variant,
   };
 
   const description = [

@@ -12,9 +12,11 @@ export const CodeEditor: FC<CodeEditorPropsType> = ({
   result,
   setUserCode,
   userCode,
+  variant,
 }) => {
   const onChange = useCallback((val: string) => {
     setUserCode(val);
+    localStorage.setItem(variant, val);
   }, []);
   return (
     <CodeMirrorWrapper>
