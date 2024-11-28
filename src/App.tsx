@@ -8,7 +8,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/tasks" element={<Task />} />
-      {/* <Route path="*" element={<div>Page Not Found</div>} /> */}
+      <Route path="*" element={<div>Page Not Found</div>} />
     </Routes>
   );
 }
