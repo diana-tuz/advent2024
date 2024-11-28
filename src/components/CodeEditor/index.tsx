@@ -87,7 +87,7 @@ const Results = styled.div`
 const ResultsContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 25px;
 `;
@@ -95,7 +95,7 @@ const ResultsContainer = styled.ul`
 const ResultItem = styled.li`
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  width: 18vw;
 `;
 
 const Button = styled.button`

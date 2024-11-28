@@ -4,7 +4,7 @@ import styled from "styled-components";
 import CodeEditor from "../CodeEditor";
 import { UserDataBlock } from "../UserDataBlock";
 
-import { VariantType } from "../types";
+import { UserDataVariantType } from "../types";
 import { TaskTemplatePropsType } from "./types";
 
 export const Task1: FC<TaskTemplatePropsType> = ({}) => {
@@ -80,7 +80,7 @@ export const Task1: FC<TaskTemplatePropsType> = ({}) => {
     }
   };
 
-  const buttonTitle = "Let's Calculate";
+  const buttonTitle = "Let's calculate";
 
   const codeEditor = {
     buttonTitle,
@@ -109,7 +109,7 @@ export const Task1: FC<TaskTemplatePropsType> = ({}) => {
     '"Oops! Please provide both your budget and the list of gift prices to continue." if the function takes fewer than 2 arguments.',
   ];
 
-  const title = "Santa’s Budget Assistant";
+  const title = "Santa’s budget assistant";
 
   const userData = {
     addPresent,
@@ -119,7 +119,7 @@ export const Task1: FC<TaskTemplatePropsType> = ({}) => {
     setUserPresents,
     userBudget,
     toggleIsUserData,
-    variant: "1" as VariantType,
+    variant: "1" as UserDataVariantType,
   };
 
   return (

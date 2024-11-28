@@ -23,18 +23,23 @@ export const Task = () => {
 };
 
 const Main = styled.div`
-  max-width: 89vw;
+  max-width: 85vw;
   width: 90%;
-  position: absolute;
+  padding: 50px 0;
 `;
 
 const Wrapper = styled.div`
-  align-items: center;
   display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  overflow-y: hidden;
   width: 99vw;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background: url(${images.winter});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `;
 const BackButton = styled(Link)`
   color: #000;

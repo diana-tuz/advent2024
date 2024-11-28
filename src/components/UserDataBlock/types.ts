@@ -6,7 +6,7 @@ export interface UserDataBlockPropsType {
   setUserPresents?: (arg: any) => void;
   toggleIsUserData?: () => void;
   userBudget?: number;
-  variant?: VariantType;
+  variant?: UserDataVariantType;
 }
 
-export type VariantType = "1" | "2";
+export type UserDataVariantType = "1" | "2";

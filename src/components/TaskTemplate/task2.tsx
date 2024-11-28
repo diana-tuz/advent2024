@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import CodeEditor from "../CodeEditor";
 
+import { arraysAreEqual } from "../tools";
 import { TaskTemplatePropsType } from "./types";
 
 export const Task2: FC<TaskTemplatePropsType> = ({}) => {
@@ -80,13 +81,6 @@ export const Task2: FC<TaskTemplatePropsType> = ({}) => {
       naughtyList: ["Anna", "Ben"],
     },
   ];
-  const arraysAreEqual = (arr1: any[], arr2: any[]) => {
-    if (arr1.length !== arr2.length) return false;
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) return false;
-    }
-    return true;
-  };
 
   const handleRunCode = () => {
     setError("");
@@ -105,7 +99,6 @@ export const Task2: FC<TaskTemplatePropsType> = ({}) => {
         const output = userFunction(threshold, children);
 
         let isPassed;
-        // Перевірка, чи output є об'єктом, і чи містить потрібні властивості
         if (typeof output === "object" && output !== null) {
           const expected = expectedResults[index] as ResultType;
           isPassed =
@@ -115,7 +108,6 @@ export const Task2: FC<TaskTemplatePropsType> = ({}) => {
           typeof output === "string" &&
           output === expectedResults[index]
         ) {
-          // Якщо це рядок, перевірка на рівність
           isPassed = true;
         } else {
           isPassed = false;
@@ -137,7 +129,7 @@ export const Task2: FC<TaskTemplatePropsType> = ({}) => {
     }
   };
 
-  const buttonTitle = "Let's Check";
+  const buttonTitle = "Let's check";
 
   const codeEditor = {
     buttonTitle,
@@ -166,7 +158,7 @@ export const Task2: FC<TaskTemplatePropsType> = ({}) => {
     "If the children array is empty, return message: 'Santa has no children to check!'",
   ];
 
-  const title = "Nice Or Naughty List";
+  const title = "Nice or Naughty list";
 
   return (
     <>
