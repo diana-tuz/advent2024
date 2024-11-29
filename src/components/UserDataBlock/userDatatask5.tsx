@@ -1,46 +1,47 @@
 import { FC } from "react";
 import styled from "styled-components";
+
 import { UserDataBlockPropsType } from "./types";
 
-export const Task2UserData: FC<UserDataBlockPropsType> = ({
-  addPresent,
+export const Task5UserData: FC<UserDataBlockPropsType> = ({
   isUserData = false,
-  presentsArr,
-  setUserBudget = () => {},
-  setUserPresents = () => {},
-  userBudget = 0,
+  setUserCups = () => {},
+  setUserRecipe = () => {},
+  userCups = 0,
   toggleIsUserData,
+  ingredients = [""],
 }) => (
   <UserData>
     <Button onClick={toggleIsUserData}>
-      {isUserData ? "Back to Tests 2 " : "Use My Budget 2"}
+      {isUserData ? "Back to Tests" : "Use my recipe"}
     </Button>
     <Block $displayed={isUserData}>
       <Budget>
-        <Text>Budget 2:</Text>
+        <Text>Cups: </Text>
         <Input
           type="number"
-          id="budget"
-          value={userBudget}
-          onChange={(event) => setUserBudget(+event.target.value)}
+          id="cups"
+          value={userCups}
+          onChange={(event) => setUserCups(+event.target.value)}
         />
       </Budget>
-      <Text>Presents:</Text>
+      <Text>Recipe:</Text>
       <PresentsBlock>
-        {presentsArr &&
-          presentsArr.map((_, index) => (
+        {ingredients.map((item, index) => (
+          <Ingredient key={index} $index={index} $string={item === "name"}>
+            <Text>{item}:</Text>
             <Input
-              type="number"
-              key={index}
+              type={item === "name" ? "text" : "number"}
               onChange={(event) => {
-                setUserPresents((prevPresents: any) => [
-                  ...prevPresents,
-                  +event.target.value,
-                ]);
+                setUserRecipe((prevRecipe: any) => ({
+                  ...prevRecipe,
+                  [item]:
+                    item === "name" ? event.target.value : +event.target.value,
+                }));
               }}
             />
-          ))}
-        <button onClick={addPresent}>+</button>
+          </Ingredient>
+        ))}
       </PresentsBlock>
     </Block>
   </UserData>
@@ -61,21 +62,27 @@ const Block = styled.div<{ $displayed: boolean }>`
   align-items: start;
 `;
 const PresentsBlock = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(2, fr);
   gap: 10px;
   align-items: start;
   margin-left: 10px;
 `;
 const Input = styled.input`
-  width: 50px;
+  width: 150px;
   padding: 5px;
 `;
 const Budget = styled.div`
   display: flex;
   gap: 10px;
   margin-right: 25px;
+`;
+const Ingredient = styled.div<{ $string?: boolean; $index: number }>`
+  display: flex;
+  flex-direction: column;
+
+  grid-column: ${({ $string, $index }) =>
+    $string ? "1/2" : $index && ($index % 2 !== 0 ? "1/2" : "2/3")};
 `;
 const Text = styled.p`
   font-size: 1vw;

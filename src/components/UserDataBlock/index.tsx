@@ -1,9 +1,9 @@
 import { FC } from "react";
 
 import { Task1UserData } from "./userDatatask1";
-import { Task2UserData } from "./userDatatask2";
 
 import { UserDataBlockPropsType } from "./types";
+import { Task5UserData } from "./userDatatask5";
 
 export const UserDataBlock: FC<UserDataBlockPropsType> = ({
   variant = "1",
@@ -16,5 +16,5 @@ export const UserDataBlock: FC<UserDataBlockPropsType> = ({
 
 const variants = {
   1: Task1UserData,
-  2: Task2UserData,
+  5: Task5UserData,
 };
