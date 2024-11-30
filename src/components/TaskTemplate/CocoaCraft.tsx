@@ -2,11 +2,12 @@ import { FC, useState } from "react";
 import styled from "styled-components";
 
 import CodeEditor from "../CodeEditor";
-
 import { TaskTitle } from "../TaskTitle";
-import { objectsEqual } from "../tools";
-import { UserDataVariantType } from "../types";
 import { UserDataBlock } from "../UserDataBlock";
+
+import { objectsEqual } from "../tools";
+
+import { UserDataVariantType } from "../types";
 import { TaskTemplatePropsType } from "./types";
 
 export type RecipeType = {
@@ -18,8 +19,7 @@ export type RecipeType = {
 };
 export type DataType = { cups: number; recipe: RecipeType };
 
-export const Task5: FC<TaskTemplatePropsType> = ({}) => {
-  const variant = "5";
+export const CocoaCraft: FC<TaskTemplatePropsType> = ({ variant = "1" }) => {
   const initialUserCode = localStorage.getItem(variant);
   const [userCode, setUserCode] = useState(
     initialUserCode
@@ -154,7 +154,7 @@ export const Task5: FC<TaskTemplatePropsType> = ({}) => {
     "1. Accepts two arguments:",
   ];
 
-  const coments = [
+  const comments = [
     "Returns an object with the total amount of each ingredient needed for the specified number of cups.",
     'If the number of cups is invalid (e.g., zero, negative, or not a number), returns a string: "Invalid input. Please provide a valid number of cups."',
     'If the recipe is invalid (e.g., missing ingredients, zero, negative values, or non-numeric values), return the string: "Invalid input. Please provide a valid recipe."',
@@ -199,8 +199,8 @@ export const Task5: FC<TaskTemplatePropsType> = ({}) => {
               ))}
             </List>
           )}
-          {coments &&
-            coments.map((text, index) => <Text key={index}>{text}</Text>)}
+          {comments &&
+            comments.map((text, index) => <Text key={index}>{text}</Text>)}
 
           {!!userData && <UserDataBlock {...userData} />}
         </Description>

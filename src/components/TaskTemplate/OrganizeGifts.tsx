@@ -2,15 +2,13 @@ import { FC, useState } from "react";
 import styled from "styled-components";
 
 import CodeEditor from "../CodeEditor";
-
 import { TaskTitle } from "../TaskTitle";
+
 import { objectsEqual } from "../tools";
 import { TaskTemplatePropsType } from "./types";
 
-export const Task4: FC<TaskTemplatePropsType> = ({}) => {
-  const variant = "4";
+export const OrganizeGifts: FC<TaskTemplatePropsType> = ({ variant = "1" }) => {
   const initialUserCode = localStorage.getItem(variant);
-
   const [userCode, setUserCode] = useState(
     initialUserCode
       ? initialUserCode
@@ -36,7 +34,7 @@ export const Task4: FC<TaskTemplatePropsType> = ({}) => {
     [],
     [
       { name: "Board Game", category: "Toys", price: 20, quantity: 0 },
-      { name: "Scarf", category: "Jevelry", price: 1200, quantity: 8 },
+      { name: "Scarf", category: "Jewelry", price: 1200, quantity: 8 },
       { name: "Sweater", category: "Clothing", price: 25, quantity: 2 },
       { name: "Chocolate", category: "Food", price: 5, quantity: 50 },
       { name: "Candle" },
@@ -118,7 +116,7 @@ export const Task4: FC<TaskTemplatePropsType> = ({}) => {
     "Create a function organizeGifts that takes giftsList - an array of gifts 🎁.",
     "Each gift is an object with the following properties:",
   ];
-  const coments = ["The function should:"];
+  const comments = ["The function should:"];
   const argslist = [
     "name (string): the name of the gift",
     "category (string): the category of the gift",
@@ -145,8 +143,8 @@ export const Task4: FC<TaskTemplatePropsType> = ({}) => {
               <li key={index}>{text}</li>
             ))}
           </List>
-          {coments &&
-            coments.map((text, index) => <Text key={index}>{text}</Text>)}
+          {comments &&
+            comments.map((text, index) => <Text key={index}>{text}</Text>)}
           <List>
             {list.map((text, index) => (
               <li key={index}>{text}</li>

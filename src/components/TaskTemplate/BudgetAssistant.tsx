@@ -8,8 +8,9 @@ import { TaskTitle } from "../TaskTitle";
 import { UserDataVariantType } from "../types";
 import { TaskTemplatePropsType } from "./types";
 
-export const Task1: FC<TaskTemplatePropsType> = ({}) => {
-  const variant = "1";
+export const BudgetAssistant: FC<TaskTemplatePropsType> = ({
+  variant = "1",
+}) => {
   const initialUserCode = localStorage.getItem(variant);
   const [userCode, setUserCode] = useState(
     initialUserCode
@@ -103,7 +104,7 @@ export const Task1: FC<TaskTemplatePropsType> = ({}) => {
     "So, let’s create a function to help you check if your plans align with your finances. Write a function called checkGiftBudget that takes budget (your total budget) and giftPrices (an array of gift costs) as its arguments.",
     "The function should return one of these messages:",
   ];
-  const coments = [
+  const comments = [
     "Please don’t rename the function or its arguments! Once you're ready, press the button to test if it works.",
     "Afterward, you can click the 'Use My Budget' button, enter your own values, and see if your budget is enough for all the gifts you’re planning to buy. 🎁",
   ];
@@ -145,8 +146,8 @@ export const Task1: FC<TaskTemplatePropsType> = ({}) => {
               ))}
             </List>
           )}
-          {coments &&
-            coments.map((text, index) => <Text key={index}>{text}</Text>)}
+          {comments &&
+            comments.map((text, index) => <Text key={index}>{text}</Text>)}
 
           {!!userData && <UserDataBlock {...userData} />}
         </Description>

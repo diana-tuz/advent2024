@@ -2,11 +2,11 @@ import { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 
 import CodeEditor from "../CodeEditor";
-
 import { TaskTitle } from "../TaskTitle";
+
 import { TaskTemplatePropsType } from "./types";
-export const Task3: FC<TaskTemplatePropsType> = ({}) => {
-  const variant = "3";
+
+export const Countdown: FC<TaskTemplatePropsType> = ({ variant = "1" }) => {
   const initialUserCode = localStorage.getItem(variant);
 
   const [userCode, setUserCode] = useState(
@@ -120,7 +120,7 @@ export const Task3: FC<TaskTemplatePropsType> = ({}) => {
     " Your task is to create a function that calculates the remaining time until New Year’s Day.",
     "Write a function named countdownToNewYear (or choose another descriptive name) that performs the following:",
   ];
-  const coments = [
+  const comments = [
     "Once you write the function, the system will handle updating the countdown every second on your behalf.",
     "If your function is written correctly, you’ll see a little bit of magic happen! ✨",
     "Good luck, and may your countdown be flawless!",
@@ -145,7 +145,7 @@ export const Task3: FC<TaskTemplatePropsType> = ({}) => {
               <li key={index}>{text}</li>
             ))}
           </List>
-          {coments.map((text, index) => (
+          {comments.map((text, index) => (
             <Text key={index}>{text}</Text>
           ))}
         </Description>

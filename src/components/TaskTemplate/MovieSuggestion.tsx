@@ -1,11 +1,12 @@
 import { FC, useState } from "react";
 import styled from "styled-components";
 
+import { christmasMovies } from "../../constants";
+
 import CodeEditor from "../CodeEditor";
+import { TaskTitle } from "../TaskTitle";
 import { UserDataBlock } from "../UserDataBlock";
 
-import { christmasMovies } from "../../constants";
-import { TaskTitle } from "../TaskTitle";
 import { UserDataVariantType } from "../types";
 import { TaskTemplatePropsType } from "./types";
 interface MovieType {
@@ -20,8 +21,9 @@ interface CriteriaType {
   year?: number;
 }
 
-export const Task6: FC<TaskTemplatePropsType> = ({}) => {
-  const variant = "6";
+export const MovieSuggestion: FC<TaskTemplatePropsType> = ({
+  variant = "1",
+}) => {
   const initialUserCode = localStorage.getItem(variant);
   const [userCode, setUserCode] = useState(
     initialUserCode

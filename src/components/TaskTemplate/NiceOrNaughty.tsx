@@ -2,13 +2,12 @@ import { FC, useState } from "react";
 import styled from "styled-components";
 
 import CodeEditor from "../CodeEditor";
-
 import { TaskTitle } from "../TaskTitle";
+
 import { arraysAreEqual } from "../tools";
 import { TaskTemplatePropsType } from "./types";
 
-export const Task2: FC<TaskTemplatePropsType> = ({}) => {
-  const variant = "2";
+export const NiceOrNaughty: FC<TaskTemplatePropsType> = ({ variant = "1" }) => {
   const initialUserCode = localStorage.getItem(variant);
 
   const [userCode, setUserCode] = useState(
