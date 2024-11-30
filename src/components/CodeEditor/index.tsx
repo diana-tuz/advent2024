@@ -18,7 +18,6 @@ export const CodeEditor: FC<CodeEditorPropsType> = ({
     setUserCode(val);
     localStorage.setItem(variant, val);
   }, []);
-  console.log("result.length", result, "isUserData", isUserData);
   return (
     <CodeMirrorWrapper>
       <CodeMirror
@@ -32,59 +31,61 @@ export const CodeEditor: FC<CodeEditorPropsType> = ({
       </Button>
       <Results>
         {error && <p style={{ color: "red" }}>{error}</p>}
-        {result.length > 1 ||
-          (isUserData && (
-            <>
-              <h3>{isUserData ? "Result of your code:" : "Test results:"}</h3>
-
-              <ResultsContainer>
-                {result.map((res, index) => {
-                  const splitedOutput = res.output
-                    .split("")
-                    .filter(
-                      (item: string) =>
-                        item !== "{" && item !== "}" && item !== '"'
-                    )
-                    .map((item: string) =>
-                      item === ":" ? `${item.charAt(0)} ` : item
-                    )
-                    .join("")
-                    .split(",");
-
-                  return isUserData ? (
-                    <ResultItem>
-                      {splitedOutput
-                        ? splitedOutput.map((item: string) => (
-                            <ResultItem>{item}</ResultItem>
-                          ))
-                        : "something vent wrong"}
-                    </ResultItem>
-                  ) : (
-                    <ResultItem key={index}>
-                      <Text> Test {index + 1}:</Text>
+        {(result.length > 1 || isUserData) && (
+          <>
+            <h3>{isUserData ? "Result of your code:" : "Test results:"}</h3>
+            <ResultsContainer>
+              {result.map(({ output, input, expected, pass }, index) => {
+                const preparedOutput =
+                  variant === "5"
+                    ? output
+                        .split("")
+                        .filter(
+                          (item: string) =>
+                            item !== "{" && item !== "}" && item !== '"'
+                        )
+                        .map((item: string) =>
+                          item === ":" ? `${item.charAt(0)} ` : item
+                        )
+                        .join("")
+                        .split(",")
+                    : output;
+                return isUserData ? (
+                  <ResultItem>
+                    {output
+                      ? preparedOutput.map((item: string) => (
+                          <ResultItem>{item}</ResultItem>
+                        ))
+                      : "something vent wrong"}
+                  </ResultItem>
+                ) : (
+                  <ResultItem key={index}>
+                    <Text> Test {index + 1}:</Text>
+                    <p>
+                      <Span>Input: </Span>
+                      {input}
+                    </p>
+                    <p>
+                      <Span>Output:</Span>
+                      {output ? output : "___"}
+                    </p>
+                    {expected && (
                       <p>
-                        <Span>Input: </Span>
-                        {res.input}
+                        <Span>Expected:</Span> {expected}
                       </p>
-                      <p>
-                        <Span>Output:</Span>
-                        {res.output ? res.output : "___"}
-                      </p>
-                      <p>
-                        <Span>Expected:</Span> {res.expected}
-                      </p>
-                      <p>
-                        <Span>Test result:</Span>
-                        <strong style={{ color: res.pass ? "green" : "red" }}>
-                          {res.pass ? " Success" : " Error"}
-                        </strong>
-                      </p>
-                    </ResultItem>
-                  );
-                })}
-              </ResultsContainer>
-            </>
-          ))}
+                    )}
+                    <p>
+                      <Span>Test result:</Span>
+                      <strong style={{ color: pass ? "green" : "red" }}>
+                        {pass ? " Success" : " Error"}
+                      </strong>
+                    </p>
+                  </ResultItem>
+                );
+              })}
+            </ResultsContainer>
+          </>
+        )}
       </Results>
     </CodeMirrorWrapper>
   );
