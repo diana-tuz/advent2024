@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import CodeEditor from "../CodeEditor";
 
+import { TaskTitle } from "../TaskTitle";
 import { TaskTemplatePropsType } from "./types";
 export const Task3: FC<TaskTemplatePropsType> = ({}) => {
   const variant = "3";
@@ -130,10 +131,10 @@ export const Task3: FC<TaskTemplatePropsType> = ({}) => {
   ];
 
   const title = "New year countdown";
-
+  const onSave = () => localStorage.setItem(variant, userCode);
   return (
     <>
-      <Title>{showTimer ? timerText : title}</Title>
+      <TaskTitle onSave={onSave} title={showTimer ? timerText : title} />
       <Container>
         <Description>
           {description.map((text) => (
@@ -162,14 +163,6 @@ export const Task3: FC<TaskTemplatePropsType> = ({}) => {
   );
 };
 
-const Title = styled.h1`
-  text-shadow: 0 0 10px #4f775d;
-  color: #454f47;
-  font-size: 70px;
-  text-decoration: underline dotted;
-  margin-bottom: 20px;
-  text-align: center;
-`;
 const Container = styled.div`
   display: flex;
   /* gap: 20px; */

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { images } from "../../assets";
 import { SnowGenerator, TaskTemplate } from "../../components";
 import { VariantType } from "../../components/types";
@@ -12,9 +12,6 @@ export const Task = () => {
   return (
     <Wrapper>
       <Main>
-        <BackButton to={"/"}>
-          <Icon src={images.arrow} />
-        </BackButton>
         <TaskTemplate variant={date as VariantType} />
         <SnowGenerator />
       </Main>
@@ -40,14 +37,4 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-`;
-const BackButton = styled(Link)`
-  color: #000;
-  position: relative;
-  left: 100px;
-  top: 90px;
-`;
-const Icon = styled.img`
-  transform: rotate(180deg);
-  width: 100px;
 `;

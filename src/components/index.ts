@@ -6,4 +6,5 @@ export * from "./Header";
 export * from "./Hero";
 export * from "./SnowGenerator";
 export * from "./TaskTemplate";
+export * from "./TaskTitle";
 export * from "./UserDataBlock";

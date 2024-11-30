@@ -1,9 +1,17 @@
 import styled from "styled-components";
 
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { images } from "../../assets";
 import { Calendar, Hero, SnowGenerator } from "../../components";
 
 export const Home = () => {
+  const [_, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    setSearchParams("");
+  }, []);
+
   return (
     <Wrapper>
       <Main>

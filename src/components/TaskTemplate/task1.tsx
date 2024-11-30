@@ -4,6 +4,7 @@ import styled from "styled-components";
 import CodeEditor from "../CodeEditor";
 import { UserDataBlock } from "../UserDataBlock";
 
+import { TaskTitle } from "../TaskTitle";
 import { UserDataVariantType } from "../types";
 import { TaskTemplatePropsType } from "./types";
 
@@ -127,9 +128,11 @@ export const Task1: FC<TaskTemplatePropsType> = ({}) => {
     variant: variant as UserDataVariantType,
   };
 
+  const onSave = () => localStorage.setItem(variant, userCode);
+
   return (
     <>
-      <Title>{title}</Title>
+      <TaskTitle onSave={onSave} title={title} />
       <Container>
         <Description>
           {description.map((text, index) => (
@@ -153,14 +156,6 @@ export const Task1: FC<TaskTemplatePropsType> = ({}) => {
   );
 };
 
-const Title = styled.h1`
-  text-shadow: 0 0 10px #4f775d;
-  color: #454f47;
-  font-size: 70px;
-  text-decoration: underline dotted;
-  margin-bottom: 20px;
-  text-align: center;
-`;
 const Container = styled.div`
   display: flex;
   /* gap: 20px; */

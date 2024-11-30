@@ -5,6 +5,7 @@ import CodeEditor from "../CodeEditor";
 import { UserDataBlock } from "../UserDataBlock";
 
 import { christmasMovies } from "../../constants";
+import { TaskTitle } from "../TaskTitle";
 import { UserDataVariantType } from "../types";
 import { TaskTemplatePropsType } from "./types";
 interface MovieType {
@@ -33,10 +34,6 @@ export const Task6: FC<TaskTemplatePropsType> = ({}) => {
   const [result, setResult] = useState<any[]>([""]);
   const [error, setError] = useState("");
 
-  const [userBudget, setUserBudget] = useState(0);
-  const [userPresents, setUserPresents] = useState<number[]>([0]);
-  const userTestData = [[userBudget, userPresents]];
-
   const [isUserData, setIsUserData] = useState(false);
   const [presentCount, setPresentCount] = useState(2);
 
@@ -54,8 +51,6 @@ export const Task6: FC<TaskTemplatePropsType> = ({}) => {
 
   const toggleIsUserData = () => {
     setIsUserData(!isUserData);
-    setUserBudget(0);
-    setUserPresents([]);
     setResult([]);
   };
   const isGenre = (userGenre: string) => {
@@ -156,31 +151,28 @@ export const Task6: FC<TaskTemplatePropsType> = ({}) => {
   const comment = "Now it’s time to build your magical movie generator! 🎥✨";
   const comments = [
     'The function must return a string: "Your movie for tonight is <name>, a fantastic <genre>, released in <year> in <country>. Enjoy!"',
-    "If no criteria is passed, the function should choose a random movie from the array",
-    "If criteria is passed, the function should filter the movies based on the given properties (genre and/or country). The genre can be a single value or an array of genres. The movie should match at least one genre from the list. The country should match the movie's country property exactly.",
+    "If no criteria is passed, the function should pick a random movie from the array",
+    "If criteria is provided, the function should pick a random movie based on the given properties (genre and/or year). If genre is provided, the movie must match this genre. If year is provided, the movie’s year must be greater than or equal to the provided year.",
     'If no movies match the provided criteria, return: "Sorry, we couldn’t find any movies that match your preferences. Try adjusting the filters!"',
   ];
   const list = [
-    "movies — an array of objects where each object represents a movie with the following properties: {name: string,genre: string, country: string, year:number}",
+    "movies — an array of objects where each object represents a movie with the following properties: {name: string, genre: string, country: string, year:number}",
     "criteria (optional) — an object with the following properties (which can be one or both): genre, and a minimum year of production (e.g., if year = 2020, the film must be from after 2020). Examle:{genre:'Comedy, year: 2020} or {year:1997} etc.",
   ];
 
-  const title = "Santa’s budget assistant";
+  const title = "Magical movie generator";
 
   const userData = {
     addPresent,
     isUserData,
     presentsArr,
-    setUserBudget,
-    setUserPresents,
-    userBudget,
     toggleIsUserData,
     variant: variant as UserDataVariantType,
   };
-
+  const onSave = () => localStorage.setItem(variant, userCode);
   return (
     <>
-      <Title>{title}</Title>
+      <TaskTitle onSave={onSave} title={title} />
       <Container>
         <Description>
           {description.map((text, index) => (
@@ -232,14 +224,7 @@ const List = styled.ul`
   gap: 10px;
   padding-left: 30px;
 `;
-const Title = styled.h1`
-  text-shadow: 0 0 10px #4f775d;
-  color: #454f47;
-  font-size: 70px;
-  text-decoration: underline dotted;
-  margin-bottom: 20px;
-  text-align: center;
-`;
+
 const Container = styled.div`
   display: flex;
   @media screen and (max-width: 768px) {

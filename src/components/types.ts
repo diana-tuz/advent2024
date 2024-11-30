@@ -5,4 +5,5 @@ export * from "./Footer/types";
 export * from "./Header/types";
 export * from "./Hero/types";
 export * from "./TaskTemplate/types";
+export * from "./TaskTitle/types";
 export * from "./UserDataBlock/types";

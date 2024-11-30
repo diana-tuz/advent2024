@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import CodeEditor from "../CodeEditor";
 
+import { TaskTitle } from "../TaskTitle";
 import { objectsEqual } from "../tools";
 import { TaskTemplatePropsType } from "./types";
 
@@ -130,10 +131,10 @@ export const Task4: FC<TaskTemplatePropsType> = ({}) => {
     "Skip any gifts with a quantity of 0 (already sold out).",
   ];
   const title = "Gift Shop";
-
+  const onSave = () => localStorage.setItem(variant, userCode);
   return (
     <>
-      <Title>{title}</Title>
+      <TaskTitle onSave={onSave} title={title} />
       <Container>
         <Description>
           {description.map((text, index) => (
@@ -173,14 +174,6 @@ const Description = styled.div`
   flex: 1;
   gap: 15px;
   padding: 20px;
-`;
-const Title = styled.h1`
-  text-shadow: 0 0 10px #4f775d;
-  color: #454f47;
-  font-size: 70px;
-  text-decoration: underline dotted;
-  margin-bottom: 20px;
-  text-align: center;
 `;
 
 const Text = styled.p`
