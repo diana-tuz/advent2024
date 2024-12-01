@@ -56,10 +56,9 @@ export const CalendarItem: FC<CalendarItemPropsType> = ({ day, onClick }) => {
       onClick={isDisabled ? onClickNowNOtWinter : onClick}
       $isSelectedDay={isSelectedDay}
       $isHoliday={isStClaus || isNewYear || isChristmas || isChristmasEve}
-      // disabled={isDisabled}
     >
       <Message $isDisplayed={isDisplayed}>
-        <p>{phrases[randomPhrases()]}</p>
+        <MessageText>{phrases[randomPhrases()]}</MessageText>
       </Message>
 
       <DateItem
@@ -96,7 +95,6 @@ const Message = styled.div<{ $isDisplayed: boolean }>`
   color: #3b503d;
   opacity: ${({ $isDisplayed }) => ($isDisplayed ? 1 : 0)};
   transition: opacity ease-in 1s;
-
   @media screen and (max-width: 768px) {
     width: 22vw;
     padding: 1vw;
@@ -231,4 +229,9 @@ const Image = styled.img`
 const Text = styled.p`
   font-size: 1.389vw;
   color: snow;
+`;
+const MessageText = styled.p`
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
