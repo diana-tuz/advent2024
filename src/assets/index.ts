@@ -1,7 +1,7 @@
 import arrow from "./arrow.png";
 import candle from "./candle.png";
+import christmas from "./christmas.png";
 import christmasEve from "./christmasEve.jpg";
-import cristmas from "./cristmas.png";
 import red from "./redbackground.jpg";
 import winter from "./snow.jpg";
 import stm from "./stm.png";
@@ -11,7 +11,7 @@ export const images = {
   arrow,
   candle,
   christmasEve,
-  cristmas,
+  christmas,
   red,
   stm,
   tree,

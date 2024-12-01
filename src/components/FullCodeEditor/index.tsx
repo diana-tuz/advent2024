@@ -101,6 +101,7 @@ export const FullCodeEditor: FC<FullCodeEditorPropsType> = ({
               <div>
                 {variants.map((variant) => (
                   <Button
+                    key={variant}
                     $active={displayedCodeMirror === variant}
                     onClick={() => setDisplayedCodeMirror(variant)}
                   >
@@ -113,19 +114,21 @@ export const FullCodeEditor: FC<FullCodeEditorPropsType> = ({
               </ToggleButton>
             </ButtonsWrapper>
           </TopWrapper>
-          {mirrorsData.map(({ displayed, extensions, value, onChange }) => (
-            <>
-              {displayed && (
-                <CodeMirror
-                  height="70vh"
-                  value={value}
-                  theme={mode ? "light" : "dark"}
-                  extensions={extensions}
-                  onChange={(value) => onChange(value)}
-                />
-              )}
-            </>
-          ))}
+          {mirrorsData.map(
+            ({ displayed, extensions, value, onChange }, index) => (
+              <Wrapper key={index}>
+                {displayed && (
+                  <CodeMirror
+                    height="70vh"
+                    value={value}
+                    theme={mode ? "light" : "dark"}
+                    extensions={extensions}
+                    onChange={(value) => onChange(value)}
+                  />
+                )}
+              </Wrapper>
+            )
+          )}
         </CodeWrapper>
         <PreviewContainer>
           <PreviewTitle>Preview</PreviewTitle>
@@ -150,6 +153,10 @@ const Iframe = styled.iframe`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+`;
+const Wrapper = styled.div`
+  max-width: 40vw;
+  overflow: auto;
 `;
 
 const PreviewContainer = styled.div`
@@ -188,7 +195,7 @@ const Button = styled.button<{ $active: boolean }>`
   background-color: ${({ $active }) => ($active ? "#f8eee1" : "#80502c")};
   border: ${({ $active }) => `3px solid ${!$active ? "#f8eee1" : "#80502c"}`};
   color: ${({ $active }) => (!$active ? "#f8eee1" : "#80502c")};
-  width: 5vw;
+  min-width: 5vw;
   text-transform: uppercase;
 `;
 
@@ -207,14 +214,12 @@ const Description = styled.div`
   padding: 20px;
 `;
 
-const Text = styled.p`
-  font-size: 1vw;
-`;
+const Text = styled.p``;
 
 const List = styled.ul`
   display: flex;
   flex-direction: column;
-  font-size: 1vw;
+
   gap: 10px;
   padding-left: 30px;
   color: #cc322a;

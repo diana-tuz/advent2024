@@ -123,9 +123,7 @@ const Button = styled.button`
   font-size: 20px;
 `;
 
-const Text = styled.p`
-  font-size: 1vw;
-`;
+const Text = styled.p``;
 
 const Span = styled.span`
   color: #314939;

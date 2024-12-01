@@ -84,9 +84,7 @@ const Ingredient = styled.div<{ $string?: boolean; $index: number }>`
   grid-column: ${({ $string, $index }) =>
     $string ? "1/2" : $index && ($index % 2 !== 0 ? "1/2" : "2/3")};
 `;
-const Text = styled.p`
-  font-size: 1vw;
-`;
+const Text = styled.p``;
 const Button = styled.button`
   font-size: 20px;
 `;

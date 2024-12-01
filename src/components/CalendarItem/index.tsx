@@ -25,33 +25,49 @@ export const CalendarItem: FC<CalendarItemPropsType> = ({ day, onClick }) => {
     "#f557f5",
   ];
   const isStClaus = "6" === currentDate;
-  const isCristmasEve = "24" === currentDate;
-  const isCristmas = "25" === currentDate;
+  const isChristmasEve = "24" === currentDate;
+  const isChristmas = "25" === currentDate;
   const isNewYear = "31" === currentDate;
   const isSelectedDay = todayDate === currentDate;
 
   const [isDisplayed, setIsDisplayed] = useState(false);
-  const onClickNowNOtWinter = () => {
+  const onClickNowNOtWinter = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
     setIsDisplayed(true);
     setTimeout(() => setIsDisplayed(false), 6000);
   };
+  const phrases = [
+    "Oops, you're a bit early! Come back soon!",
+    "Hold your reindeer! It’s not time yet!",
+    "Not just yet! The magic will unfold soon!",
+    "A little patience goes a long way—check) back later!",
+    "The clock hasn’t struck yet! Stay tuned!",
+    "It's not time yet! Patience is the key!",
+    "Patience is a virtue! The magic isn’t ready yet.",
+    "Hold your horses! The fun is just around the corner.",
+    "Chill out—Santa’s not rushing, and neither should you!",
+    "Not quite yet! Let the festive spirit brew a little longer.",
+    "Keep the excitement alive—good things come to those who wait.",
+    "Whoa there, snowflake! Give it a bit more time to sparkle.",
+  ];
+  const randomPhrases = () => Math.floor(Math.random() * phrases.length);
   return (
     <Container
-      onClick={onClick ? onClick : onClickNowNOtWinter}
+      onClick={isDisabled ? onClickNowNOtWinter : onClick}
       $isSelectedDay={isSelectedDay}
-      $isHoliday={isStClaus || isNewYear || isCristmas || isCristmasEve}
-      disabled={isDisabled}
+      $isHoliday={isStClaus || isNewYear || isChristmas || isChristmasEve}
+      // disabled={isDisabled}
     >
       <Message $isDisplayed={isDisplayed}>
-        <p>It's not winter yet! Please, wait a little bit!</p>
+        <p>{phrases[randomPhrases()]}</p>
       </Message>
 
-      <Datew
+      <DateItem
         $isSelectedDay={isSelectedDay}
-        $isHoliday={isStClaus || isNewYear || isCristmas || isCristmasEve}
+        $isHoliday={isStClaus || isNewYear || isChristmas || isChristmasEve}
       >
         {currentDate}
-      </Datew>
+      </DateItem>
       {isSelectedDay && (
         <Lights>
           {lightsArray.map((_, index) => (
@@ -62,8 +78,8 @@ export const CalendarItem: FC<CalendarItemPropsType> = ({ day, onClick }) => {
         </Lights>
       )}
       {isStClaus && <Image src={images.stm} alt="santaClaus" />}
-      {(isCristmasEve || isCristmas) && (
-        <Image src={isCristmasEve ? images.tree : images.candle} />
+      {(isChristmasEve || isChristmas) && (
+        <Image src={isChristmasEve ? images.tree : images.candle} />
       )}
       {isNewYear && <Text>Happy New Year!</Text>}
     </Container>
@@ -113,7 +129,7 @@ const Container = styled.button<{
   }
 `;
 
-const Datew = styled.p<{
+const DateItem = styled.p<{
   $isSelectedDay: boolean;
   $isHoliday: boolean;
 }>`
@@ -171,7 +187,7 @@ const Light = styled.div`
   }
 `;
 
-const cristmasLights = keyframes`
+const ChristmasLights = keyframes`
 0% {
   opacity:0.5;
 }
@@ -193,7 +209,7 @@ const Item = styled.div<{ $delay: number; $color: string }>`
   bottom: -18px;
   left: -1px;
   opacity: 0.5;
-  animation: ${cristmasLights} ease-in infinite;
+  animation: ${ChristmasLights} ease-in infinite;
   animation-duration: 2s;
   animation-delay: ${({ $delay }) => `${$delay}s`};
   background-color: ${({ $color }) => $color};

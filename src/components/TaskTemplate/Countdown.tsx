@@ -180,15 +180,13 @@ const Description = styled.div`
   padding: 20px;
 `;
 
-const Text = styled.p`
-  font-size: 1vw;
-`;
+const Text = styled.p``;
 
 const List = styled.ul`
   color: #454f47;
   display: flex;
   flex-direction: column;
-  font-size: 1vw;
+
   gap: 10px;
   padding-left: 30px;
 `;

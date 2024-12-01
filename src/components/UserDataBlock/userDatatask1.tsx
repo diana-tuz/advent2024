@@ -77,9 +77,7 @@ const Budget = styled.div`
   gap: 10px;
   margin-right: 25px;
 `;
-const Text = styled.p`
-  font-size: 1vw;
-`;
+const Text = styled.p``;
 const Button = styled.button`
   font-size: 20px;
 `;

@@ -38,5 +38,7 @@ const Container = styled.div`
   width: 90%;
   @media screen and (max-width: 768px) {
     gap: 2vw;
+    width: 100%;
+    justify-content: center;
   }
 `;
