@@ -9,14 +9,14 @@ export const Task = () => {
   const [searchParams] = useSearchParams();
 
   const date = searchParams.get("date");
-  // const todayDate = new Date().getDate().toString();
+  const todayDate = new Date().getDate().toString();
 
-  // const variant = date && +date > +todayDate ? "default" : date;
+  const variant = date && +date > +todayDate ? "default" : date;
 
   return (
     <Wrapper>
       <Main>
-        <TaskTemplate variant={date as VariantType} />
+        <TaskTemplate variant={variant as VariantType} />
         <SnowGenerator />
       </Main>
     </Wrapper>

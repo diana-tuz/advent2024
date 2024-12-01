@@ -4,13 +4,14 @@ import { BudgetAssistant } from "./BudgetAssistant";
 import { ChristmasLights } from "./ChristmasLights";
 import { CocoaCraft } from "./CocoaCraft";
 import { Countdown } from "./Countdown";
+import { DefaultTask } from "./DefaultTask";
+import { EncryptedLetter } from "./EncryptedLetter";
+import { GeneratePrediction } from "./GeneratePrediction";
 import { MovieSuggestion } from "./MovieSuggestion";
 import { NiceOrNaughty } from "./NiceOrNaughty";
 import { OrganizeGifts } from "./OrganizeGifts";
 import { SnowfallGenerator } from "./SnowfallGenerator";
 import { TaskTemplatePropsType } from "./types";
-import { DefaultTask } from "./DefaultTask";
-import { EncryptedLetter } from "./EncryptedLetter";
 
 export const TaskTemplate: FC<TaskTemplatePropsType> = ({ variant = "1" }) => {
   const CurrentTask = tasks[variant];
@@ -27,5 +28,6 @@ const tasks = {
   7: MovieSuggestion,
   8: OrganizeGifts,
   9: EncryptedLetter,
+  10: GeneratePrediction,
   default: DefaultTask,
 };

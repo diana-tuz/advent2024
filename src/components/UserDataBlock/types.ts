@@ -4,6 +4,7 @@ export interface UserDataBlockPropsType {
   presentsArr?: number[];
   setUserBudget?: (price: number) => void;
   setUserCups?: (amount: number) => void;
+  setUserRecipient?: (name: string) => void;
   setUserPresents?: (arg: any) => void;
   setUserRecipe?: (arg: any) => void;
   toggleIsUserData?: () => void;
@@ -11,6 +12,7 @@ export interface UserDataBlockPropsType {
   userCups?: number;
   variant?: UserDataVariantType;
   ingredients?: string[];
+  userRecipient?: string;
 }
 
-export type UserDataVariantType = "1" | "5";
+export type UserDataVariantType = "1" | "5" | "10";

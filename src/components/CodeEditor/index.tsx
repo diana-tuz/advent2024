@@ -36,27 +36,13 @@ export const CodeEditor: FC<CodeEditorPropsType> = ({
             <h3>{isUserData ? "Result of your code:" : "Test results:"}</h3>
             <ResultsContainer>
               {result.map(({ output, input, expected, pass }, index) => {
-                const preparedOutput =
-                  variant === "5"
-                    ? output
-                        .split("")
-                        .filter(
-                          (item: string) =>
-                            item !== "{" && item !== "}" && item !== '"'
-                        )
-                        .map((item: string) =>
-                          item === ":" ? `${item.charAt(0)} ` : item
-                        )
-                        .join("")
-                        .split(",")
-                    : output;
                 return isUserData ? (
-                  <ResultItem>
-                    {output
-                      ? preparedOutput.map((item: string) => (
-                          <ResultItem>{item}</ResultItem>
-                        ))
-                      : "something vent wrong"}
+                  <ResultItem key={index}>
+                    {output ? (
+                      <ResultItem>{output}</ResultItem>
+                    ) : (
+                      "something vent wrong"
+                    )}
                   </ResultItem>
                 ) : (
                   <ResultItem key={index}>

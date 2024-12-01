@@ -71,3 +71,7 @@ button:focus-visible {
 ul {
   font-family: "Times New Roman", Times, serif;
 }
+p,
+ul {
+  font-size: 20px;
+}
