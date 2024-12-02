@@ -112,7 +112,6 @@ export const BudgetAssistant: FC<TaskTemplatePropsType> = ({
     '"Great job! No overspending, no leftovers—just right" if the total cost equals your budget.',
     '"Looks like you’ve saved money for a little treat for yourself!" if you have some money left.',
     '"Uh-oh, you’re overspending! Try trimming down your expenses." if the gifts cost more than your budget.',
-    '"Uh-oh, you’re overspending! Try trimming down your expenses." if the gifts cost more than your budget.',
     '"Oops! Please provide both your budget and the list of gift prices to continue." if the function takes fewer than 2 arguments.',
   ];
 
