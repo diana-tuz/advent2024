@@ -1,5 +1,6 @@
 export interface TaskTemplatePropsType {
   variant?: VariantType;
+  snowButton: { onClick: () => void; isON: boolean };
 }
 export type VariantType =
   | "1"

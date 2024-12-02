@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { images } from "../../assets";
 import { SnowGenerator, TaskTemplate } from "../../components";
@@ -12,12 +13,21 @@ export const Task = () => {
   const todayDate = new Date().getDate().toString();
 
   const variant = date && +date > +todayDate ? "default" : date;
+  const [isSnowing, setIsSnowing] = useState(true);
+  const onClick = () => setIsSnowing(!isSnowing);
+  const snowButton = {
+    isON: isSnowing,
+    onClick,
+  };
 
   return (
     <Wrapper>
       <Main>
-        <TaskTemplate variant={variant as VariantType} />
-        <SnowGenerator />
+        <TaskTemplate
+          variant={variant as VariantType}
+          snowButton={snowButton}
+        />
+        {isSnowing && <SnowGenerator />}
       </Main>
     </Wrapper>
   );

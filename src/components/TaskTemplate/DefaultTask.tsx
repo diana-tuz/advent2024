@@ -4,12 +4,12 @@ import styled from "styled-components";
 import { TaskTitle } from "../TaskTitle";
 import { TaskTemplatePropsType } from "./types";
 
-export const DefaultTask: FC<TaskTemplatePropsType> = ({}) => {
+export const DefaultTask: FC<TaskTemplatePropsType> = ({ snowButton }) => {
   const title = "Hold your horses! The fun is just around the corner.";
 
   return (
     <Description>
-      <TaskTitle title={title} />
+      <TaskTitle title={title} snowButton={snowButton} />
     </Description>
   );
 };

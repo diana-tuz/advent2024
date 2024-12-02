@@ -13,9 +13,12 @@ import { OrganizeGifts } from "./OrganizeGifts";
 import { SnowfallGenerator } from "./SnowfallGenerator";
 import { TaskTemplatePropsType } from "./types";
 
-export const TaskTemplate: FC<TaskTemplatePropsType> = ({ variant = "1" }) => {
+export const TaskTemplate: FC<TaskTemplatePropsType> = ({
+  variant = "1",
+  snowButton,
+}) => {
   const CurrentTask = tasks[variant];
-  return <CurrentTask variant={variant} />;
+  return <CurrentTask variant={variant} snowButton={snowButton} />;
 };
 
 const tasks = {

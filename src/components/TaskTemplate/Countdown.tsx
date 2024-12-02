@@ -6,7 +6,10 @@ import { TaskTitle } from "../TaskTitle";
 
 import { TaskTemplatePropsType } from "./types";
 
-export const Countdown: FC<TaskTemplatePropsType> = ({ variant = "1" }) => {
+export const Countdown: FC<TaskTemplatePropsType> = ({
+  variant = "1",
+  snowButton,
+}) => {
   const initialUserCode = localStorage.getItem(variant);
 
   const [userCode, setUserCode] = useState(
@@ -134,7 +137,11 @@ export const Countdown: FC<TaskTemplatePropsType> = ({ variant = "1" }) => {
   const onSave = () => localStorage.setItem(variant, userCode);
   return (
     <>
-      <TaskTitle onSave={onSave} title={showTimer ? timerText : title} />
+      <TaskTitle
+        onSave={onSave}
+        title={showTimer ? timerText : title}
+        snowButton={snowButton}
+      />
       <Container>
         <Description>
           {description.map((text) => (

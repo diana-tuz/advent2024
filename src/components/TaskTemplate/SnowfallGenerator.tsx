@@ -6,6 +6,7 @@ import { TaskTemplatePropsType, VariantType } from "./types";
 
 export const SnowfallGenerator: FC<TaskTemplatePropsType> = ({
   variant = "1",
+  snowButton,
 }) => {
   const description = [
     "The holiday season wouldn’t be complete without a magical snowfall! Let’s create a beautiful snowstorm effect using HTML, CSS, and JavaScript.",
@@ -19,12 +20,17 @@ export const SnowfallGenerator: FC<TaskTemplatePropsType> = ({
     "Additional Features:Add a button to start and stop the snowfall. Customize the snowfall intensity (how many snowflakes fall at once).",
   ];
   const title = "Let it snow!";
-  const codeEditorData = {
+  const taskTitle = {
     title,
+    snowButton,
+  };
+  const codeEditorData = {
+    taskTitle,
     variant: variant as VariantType,
     comment,
     list,
     description,
+    snowButton,
   };
   return <FullCodeEditor {...codeEditorData} />;
 };

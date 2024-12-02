@@ -23,6 +23,7 @@ interface CriteriaType {
 
 export const MovieSuggestion: FC<TaskTemplatePropsType> = ({
   variant = "1",
+  snowButton,
 }) => {
   const initialUserCode = localStorage.getItem(variant);
   const [userCode, setUserCode] = useState(
@@ -174,7 +175,7 @@ export const MovieSuggestion: FC<TaskTemplatePropsType> = ({
   const onSave = () => localStorage.setItem(variant, userCode);
   return (
     <>
-      <TaskTitle onSave={onSave} title={title} />
+      <TaskTitle onSave={onSave} title={title} snowButton={snowButton} />
       <Container>
         <Description>
           {description.map((text, index) => (

@@ -11,6 +11,7 @@ import { TaskTemplatePropsType } from "./types";
 
 export const GeneratePrediction: FC<TaskTemplatePropsType> = ({
   variant = "1",
+  snowButton,
 }) => {
   const initialUserCode = localStorage.getItem(variant);
   const [userCode, setUserCode] = useState(
@@ -129,7 +130,7 @@ export const GeneratePrediction: FC<TaskTemplatePropsType> = ({
 
   return (
     <>
-      <TaskTitle onSave={onSave} title={title} />
+      <TaskTitle onSave={onSave} title={title} snowButton={snowButton} />
       <Container>
         <Description>
           {description.map((text, index) => (

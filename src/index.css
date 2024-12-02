@@ -64,10 +64,6 @@ button {
   transition: all 0.25s ease-in;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto #80502c;
-}
 ul {
   font-family: "Times New Roman", Times, serif;
 }

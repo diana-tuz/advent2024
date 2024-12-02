@@ -19,7 +19,10 @@ export type RecipeType = {
 };
 export type DataType = { cups: number; recipe: RecipeType };
 
-export const CocoaCraft: FC<TaskTemplatePropsType> = ({ variant = "1" }) => {
+export const CocoaCraft: FC<TaskTemplatePropsType> = ({
+  variant = "1",
+  snowButton,
+}) => {
   const initialUserCode = localStorage.getItem(variant);
   const [userCode, setUserCode] = useState(
     initialUserCode
@@ -186,7 +189,7 @@ export const CocoaCraft: FC<TaskTemplatePropsType> = ({ variant = "1" }) => {
   const onSave = () => localStorage.setItem(variant, userCode);
   return (
     <>
-      <TaskTitle onSave={onSave} title={title} />
+      <TaskTitle onSave={onSave} title={title} snowButton={snowButton} />
       <Container>
         <Description>
           {description.map((text, index) => (

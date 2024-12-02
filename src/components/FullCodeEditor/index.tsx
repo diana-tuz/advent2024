@@ -11,11 +11,11 @@ type MirrorType = "html" | "css" | "js";
 
 export const FullCodeEditor: FC<FullCodeEditorPropsType> = ({
   variant,
-  title,
   description,
   comment,
   list,
   defaultCode: { defaultHtml = "", defaultCss = "", defaultJs = "" } = {},
+  taskTitle,
 }) => {
   const initialHtml = localStorage.getItem(`${variant}Html`);
   const initialCss = localStorage.getItem(`${variant}Css`);
@@ -88,7 +88,7 @@ export const FullCodeEditor: FC<FullCodeEditorPropsType> = ({
 
   return (
     <Container>
-      <TaskTitle title={title} onSave={onSave} />
+      <TaskTitle {...taskTitle} onSave={onSave} />
       <Description>
         {description &&
           description.map((text, index) => <Text key={index}>{text}</Text>)}
