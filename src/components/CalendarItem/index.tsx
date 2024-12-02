@@ -153,12 +153,10 @@ const Lights = styled.div`
 const Light = styled.div`
   border-radius: 3px;
   display: block;
-  content: "";
   width: 10px;
   height: 10px;
   background-color: #31302e;
   position: relative;
-
   &:after {
     position: absolute;
     right: -27px;

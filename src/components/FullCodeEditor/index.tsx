@@ -15,15 +15,18 @@ export const FullCodeEditor: FC<FullCodeEditorPropsType> = ({
   description,
   comment,
   list,
+  defaultCode: { defaultHtml = "", defaultCss = "", defaultJs = "" } = {},
 }) => {
   const initialHtml = localStorage.getItem(`${variant}Html`);
   const initialCss = localStorage.getItem(`${variant}Css`);
   const initialJs = localStorage.getItem(`${variant}Js`);
   const [htmlContent, setHtmlContent] = useState(
-    initialHtml ? initialHtml : ""
+    initialHtml ? initialHtml : defaultHtml
   );
-  const [cssContent, setCssContent] = useState(initialCss ? initialCss : "");
-  const [jsContent, setJsContent] = useState(initialJs ? initialJs : "");
+  const [cssContent, setCssContent] = useState(
+    initialCss ? initialCss : defaultCss
+  );
+  const [jsContent, setJsContent] = useState(initialJs ? initialJs : defaultJs);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [displayedCodeMirror, setDisplayedCodeMirror] =
     useState<MirrorType>("html");

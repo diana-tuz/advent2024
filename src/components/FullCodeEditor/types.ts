@@ -6,4 +6,11 @@ export interface FullCodeEditorPropsType {
   description?: string[];
   comment?: string;
   list?: string[];
+  defaultCode?: CodeType;
 }
+
+type CodeType = {
+  defaultHtml?: string;
+  defaultCss?: string;
+  defaultJs?: string;
+};
