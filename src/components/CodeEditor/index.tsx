@@ -84,18 +84,24 @@ const CodeMirrorWrapper = styled.div`
   flex-direction: column;
   flex: 1;
   gap: 20px;
+  max-width: 45vw;
+  @media screen and (max-width: 768px) {
+    max-width: 90px;
+  }
 `;
+
 const Results = styled.div`
+  background-color: #fcf5efba;
   display: flex;
   flex-direction: column;
-  background-color: #fcf5efba;
   padding: 0 20px;
 `;
+
 const ResultsContainer = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  gap: 10px;
   margin-top: 25px;
 `;
 
