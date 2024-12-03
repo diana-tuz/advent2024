@@ -144,8 +144,8 @@ export const Countdown: FC<TaskTemplatePropsType> = ({
       />
       <Container>
         <Description>
-          {description.map((text) => (
-            <Text>{text}</Text>
+          {description.map((text, index) => (
+            <Text key={index}>{text}</Text>
           ))}
           <List>
             {list.map((text, index) => (

@@ -86,7 +86,7 @@ const CodeMirrorWrapper = styled.div`
   gap: 20px;
   max-width: 45vw;
   @media screen and (max-width: 768px) {
-    max-width: 90px;
+    min-width: 90vw;
   }
 `;
 

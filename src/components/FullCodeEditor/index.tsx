@@ -39,6 +39,7 @@ export const FullCodeEditor: FC<FullCodeEditorPropsType> = ({
     const documentContent = `
       <html>
         <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
           <style>${cssContent}</style>
         </head>
         <body>
@@ -101,7 +102,7 @@ export const FullCodeEditor: FC<FullCodeEditorPropsType> = ({
         <CodeWrapper>
           <TopWrapper>
             <ButtonsWrapper>
-              <div>
+              <LanguagesButtons>
                 {variants.map((variant) => (
                   <Button
                     key={variant}
@@ -111,7 +112,7 @@ export const FullCodeEditor: FC<FullCodeEditorPropsType> = ({
                     {variant}
                   </Button>
                 ))}
-              </div>
+              </LanguagesButtons>
               <ToggleButton onClick={() => setMode(!mode)} $isLight={mode}>
                 {mode ? "Dark Mode" : "Light Mode"}
               </ToggleButton>
@@ -135,7 +136,9 @@ export const FullCodeEditor: FC<FullCodeEditorPropsType> = ({
         </CodeWrapper>
         <PreviewContainer>
           <PreviewTitle>Preview</PreviewTitle>
-          <Iframe ref={iframeRef} title="output" style={{}}></Iframe>
+          <IframeWrapper>
+            <Iframe ref={iframeRef} title="output"></Iframe>
+          </IframeWrapper>
         </PreviewContainer>
       </CodeContainer>
     </Container>
@@ -145,21 +148,42 @@ export const FullCodeEditor: FC<FullCodeEditorPropsType> = ({
 const PreviewTitle = styled.h3`
   color: #cc322a;
   font-size: 2vw;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+`;
+
+const IframeWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 56.25%;
+  @media screen and (max-width: 768px) {
+    padding-top: 100%;
+  }
 `;
 
 const Iframe = styled.iframe`
-  background-color: white;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  border: none;
 `;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
+const LanguagesButtons = styled.div`
+  display: flex;
+`;
 const Wrapper = styled.div`
   max-width: 40vw;
   overflow: auto;
+  @media screen and (max-width: 768px) {
+    min-width: 90vw;
+  }
 `;
 
 const PreviewContainer = styled.div`
@@ -182,6 +206,10 @@ const CodeContainer = styled.div`
   gap: 20px;
   height: 80vh;
   padding: 20px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    height: fit-content;
+  }
 `;
 
 const TopWrapper = styled.div`
@@ -193,6 +221,8 @@ const ButtonsWrapper = styled.div`
   flex: 1;
   justify-content: space-between;
   margin-bottom: 20px;
+  gap: 20px;
+  align-items: center;
 `;
 const Button = styled.button<{ $active: boolean }>`
   background-color: ${({ $active }) => ($active ? "#f8eee1" : "#80502c")};
@@ -200,6 +230,8 @@ const Button = styled.button<{ $active: boolean }>`
   color: ${({ $active }) => (!$active ? "#f8eee1" : "#80502c")};
   min-width: 5vw;
   text-transform: uppercase;
+  @media screen and (max-width: 768px) {
+  }
 `;
 
 const ToggleButton = styled.button<{ $isLight: boolean }>`

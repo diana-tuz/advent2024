@@ -40,6 +40,7 @@ const Title = styled.h1`
   text-align: center;
   @media screen and (max-width: 768px) {
     font-size: 35px;
+    width: 100%;
   }
 `;
 const SnowTitle = styled.p``;
@@ -51,7 +52,15 @@ const ButtonsContainer = styled.div`
   align-items: baseline;
   align-content: end;
   gap: 25px;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+  }
 `;
+
 const SnowButtonContainer = styled.div`
   display: flex;
   align-items: center;
@@ -92,13 +101,14 @@ const TitleContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+  }
 `;
 
 const Container = styled.div`
   display: flex;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
 `;
 
 const Button = styled.button``;
