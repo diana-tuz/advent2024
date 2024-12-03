@@ -95,7 +95,6 @@ export const NiceOrNaughty: FC<TaskTemplatePropsType> = ({
     try {
       const preparedUserFunction = userCode.split("(threshold, children)")[1];
 
-      console.log("preparedUserFunction", preparedUserFunction);
       const userFunction = new Function(
         "threshold",
         "children",

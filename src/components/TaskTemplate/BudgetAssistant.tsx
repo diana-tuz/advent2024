@@ -61,7 +61,6 @@ export const BudgetAssistant: FC<TaskTemplatePropsType> = ({
     try {
       const preparedUserFunction = userCode.split("(budget, giftPrices)")[1];
 
-      console.log("preparedUserFunction", preparedUserFunction);
       const userFunction = new Function(
         "budget",
         "giftPrices",

@@ -27,7 +27,7 @@ export const GeneratePrediction: FC<TaskTemplatePropsType> = ({
 
   const [userRecipient, setUserRecipient] = useState<string>("");
   const userTestData = [[predictions, userRecipient]];
-  console.log({ userRecipient });
+
   const [isUserData, setIsUserData] = useState(false);
 
   const testData = [
@@ -65,7 +65,6 @@ export const GeneratePrediction: FC<TaskTemplatePropsType> = ({
         "(predictions, recipient)"
       )[1];
 
-      console.log("preparedUserFunction", preparedUserFunction);
       const userFunction = new Function(
         "predictions",
         "recipient",

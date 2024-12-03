@@ -17,7 +17,7 @@ export const Task2UserData: FC<UserDataBlockPropsType> = ({
         <Text>Name:</Text>
         <Input
           type="test"
-          id="budget"
+          id="name"
           value={userRecipient}
           onChange={(event) => setUserRecipient(event.target.value)}
         />

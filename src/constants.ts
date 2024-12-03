@@ -427,3 +427,17 @@ export const predictions = [
   "{recipient} will soon gain the clarity they need to make an important decision.",
   "{recipient} will experience a joyful surprise before the year ends",
 ];
+
+export const secretSanta = [
+  "Jenny",
+  "Ira",
+  "Diana",
+  "Olga",
+  "Anastasia",
+  "Piter",
+  "Jon",
+  "Santa",
+  "Yana",
+  "Bogdan",
+  "Nicola",
+];

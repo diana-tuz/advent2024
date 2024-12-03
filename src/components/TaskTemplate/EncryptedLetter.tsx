@@ -58,7 +58,6 @@ export const EncryptedLetter: FC<TaskTemplatePropsType> = ({
     try {
       const preparedUserFunction = userCode.split("(message, shift)")[1];
 
-      console.log("preparedUserFunction", preparedUserFunction);
       const userFunction = new Function(
         "message",
         "shift",
