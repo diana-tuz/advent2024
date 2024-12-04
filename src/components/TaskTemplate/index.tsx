@@ -5,6 +5,7 @@ import { ChristmasLights } from "./ChristmasLights";
 import { CocoaCraft } from "./CocoaCraft";
 import { Countdown } from "./Countdown";
 import { DefaultTask } from "./DefaultTask";
+import { ElfManipulator } from "./ElfManipulator";
 import { EncryptedLetter } from "./EncryptedLetter";
 import { GeneratePrediction } from "./GeneratePrediction";
 import { MovieSuggestion } from "./MovieSuggestion";
@@ -28,11 +29,12 @@ const tasks = {
   3: ChristmasLights,
   4: NiceOrNaughty,
   5: CocoaCraft,
-  6: SnowfallGenerator,
-  7: MovieSuggestion,
+  6: MovieSuggestion,
+  7: SnowfallGenerator,
   8: OrganizeGifts,
   9: EncryptedLetter,
   10: GeneratePrediction,
   11: SecretSanta,
+  12: ElfManipulator,
   default: DefaultTask,
 };
