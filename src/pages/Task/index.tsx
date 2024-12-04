@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { images } from "../../assets";
 import { SnowGenerator, TaskTemplate } from "../../components";
@@ -13,12 +13,24 @@ export const Task = () => {
   const todayDate = new Date().getDate().toString();
 
   const variant = date && +date > +todayDate ? "default" : date;
-  const [isSnowing, setIsSnowing] = useState(true);
-  const onClick = () => setIsSnowing(!isSnowing);
+  const isSnow = localStorage.getItem("isSnow");
+  const [isSnowing, setIsSnowing] = useState(!!isSnow);
+
+  const onClick = () => {
+    setIsSnowing(!isSnowing);
+    !isSnowing
+      ? localStorage.setItem("isSnow", "true")
+      : localStorage.removeItem("isSnow");
+  };
   const snowButton = {
     isON: isSnowing,
     onClick,
   };
+  useEffect(() => {
+    if (!isSnow) {
+      localStorage.setItem("isSnow", "true");
+    }
+  }, []);
 
   return (
     <Wrapper>
