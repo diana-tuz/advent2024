@@ -31,7 +31,7 @@ export const CodeEditor: FC<CodeEditorPropsType> = ({
       </Button>
       <Results>
         {error && <p style={{ color: "red" }}>{error}</p>}
-        {(result.length > 1 || isUserData) && (
+        {(result.length >= 1 || isUserData) && (
           <>
             <h3>{isUserData ? "Result of your code:" : "Test results:"}</h3>
             <ResultsContainer>

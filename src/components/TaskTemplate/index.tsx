@@ -5,6 +5,7 @@ import { ChristmasLights } from "./ChristmasLights";
 import { CocoaCraft } from "./CocoaCraft";
 import { Countdown } from "./Countdown";
 import { DefaultTask } from "./DefaultTask";
+import { DuplicateDecorations } from "./DuplicateDecorations";
 import { ElfManipulator } from "./ElfManipulator";
 import { EncryptedLetter } from "./EncryptedLetter";
 import { GeneratePrediction } from "./GeneratePrediction";
@@ -36,5 +37,6 @@ const tasks = {
   10: GeneratePrediction,
   11: SecretSanta,
   12: ElfManipulator,
+  13: DuplicateDecorations,
   default: DefaultTask,
 };
