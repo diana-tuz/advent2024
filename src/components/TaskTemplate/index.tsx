@@ -12,6 +12,7 @@ import { GeneratePrediction } from "./GeneratePrediction";
 import { MovieSuggestion } from "./MovieSuggestion";
 import { NiceOrNaughty } from "./NiceOrNaughty";
 import { OrganizeGifts } from "./OrganizeGifts";
+import { PopularGift } from "./PopularGift";
 import { SecretSanta } from "./SecretSanta";
 import { SnowfallGenerator } from "./SnowfallGenerator";
 import { TaskTemplatePropsType } from "./types";
@@ -38,5 +39,6 @@ const tasks = {
   11: SecretSanta,
   12: ElfManipulator,
   13: DuplicateDecorations,
+  14: PopularGift,
   default: DefaultTask,
 };
