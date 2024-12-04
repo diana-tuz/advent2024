@@ -13,6 +13,7 @@ import { GeneratePrediction } from "./GeneratePrediction";
 import { MovieSuggestion } from "./MovieSuggestion";
 import { NiceOrNaughty } from "./NiceOrNaughty";
 import { OrganizeGifts } from "./OrganizeGifts";
+import { Palindrome } from "./Palindrome";
 import { PopularGift } from "./PopularGift";
 import { SecretSanta } from "./SecretSanta";
 import { SnowfallGenerator } from "./SnowfallGenerator";
@@ -42,5 +43,6 @@ const tasks = {
   13: DuplicateDecorations,
   14: EncryptedLetter,
   15: MovieSuggestion,
+  16: Palindrome,
   default: DefaultTask,
 };
