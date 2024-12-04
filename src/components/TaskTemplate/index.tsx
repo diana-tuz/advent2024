@@ -22,6 +22,7 @@ import { WordOccurrences } from "./WordOccurrences";
 import { BudgetAssistant } from "./BudgetAssistant";
 import { CalculateShoppingList } from "./CalculateShoppingList";
 import { FindOrderNumber } from "./FindOrderNumber";
+import { GiftWrappingCommandCenter } from "./GiftWrapping";
 import { TaskTemplatePropsType } from "./types";
 
 export const TaskTemplate: FC<TaskTemplatePropsType> = ({
@@ -53,5 +54,6 @@ const tasks = {
   18: WordOccurrences,
   19: CalculateShoppingList,
   20: FindOrderNumber,
+  21: GiftWrappingCommandCenter,
   default: DefaultTask,
 };

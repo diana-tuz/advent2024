@@ -21,6 +21,6 @@
   "include": [
     "src",
     "src/components/TaskTemplate/CalculateShoppingList.tsx",
-    "src/components/TaskTemplate/.tsx"
+    "src/components/TaskTemplate/GiftWrapping.tsx"
   ]
 }
