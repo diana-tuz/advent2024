@@ -10,6 +10,7 @@ import { ElfManipulator } from "./ElfManipulator";
 import { EncryptedLetter } from "./EncryptedLetter";
 import { FilterTasks } from "./FilterTasks";
 import { GeneratePrediction } from "./GeneratePrediction";
+import { LongestSongTitle } from "./LongestSongTitle";
 import { MovieSuggestion } from "./MovieSuggestion";
 import { NiceOrNaughty } from "./NiceOrNaughty";
 import { OrganizeGifts } from "./OrganizeGifts";
@@ -17,6 +18,8 @@ import { Palindrome } from "./Palindrome";
 import { PopularGift } from "./PopularGift";
 import { SecretSanta } from "./SecretSanta";
 import { SnowfallGenerator } from "./SnowfallGenerator";
+import { WordOccurrences } from "./WordOccurrences";
+
 import { TaskTemplatePropsType } from "./types";
 
 export const TaskTemplate: FC<TaskTemplatePropsType> = ({
@@ -44,5 +47,7 @@ const tasks = {
   14: EncryptedLetter,
   15: MovieSuggestion,
   16: Palindrome,
+  17: LongestSongTitle,
+  18: WordOccurrences,
   default: DefaultTask,
 };
