@@ -18,5 +18,9 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "useDefineForClassFields": true
   },
-  "include": ["src", "src/components/TaskTemplate/.tsx"]
+  "include": [
+    "src",
+    "src/components/TaskTemplate/CalculateShoppingList.tsx",
+    "src/components/TaskTemplate/.tsx"
+  ]
 }

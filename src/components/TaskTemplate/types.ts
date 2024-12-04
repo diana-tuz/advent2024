@@ -21,4 +21,5 @@ export type VariantType =
   | "16"
   | "17"
   | "18"
+  | "19"
   | "default";

@@ -1,6 +1,5 @@
 import { FC } from "react";
 
-import { BudgetAssistant } from "./BudgetAssistant";
 import { ChristmasLights } from "./ChristmasLights";
 import { CocoaCraft } from "./CocoaCraft";
 import { Countdown } from "./Countdown";
@@ -20,6 +19,9 @@ import { SecretSanta } from "./SecretSanta";
 import { SnowfallGenerator } from "./SnowfallGenerator";
 import { WordOccurrences } from "./WordOccurrences";
 
+import { BudgetAssistant } from "./BudgetAssistant";
+import { CalculateShoppingList } from "./CalculateShoppingList";
+import { FindOrderNumber } from "./FindOrderNumber";
 import { TaskTemplatePropsType } from "./types";
 
 export const TaskTemplate: FC<TaskTemplatePropsType> = ({
@@ -49,5 +51,7 @@ const tasks = {
   16: Palindrome,
   17: LongestSongTitle,
   18: WordOccurrences,
+  19: CalculateShoppingList,
+  20: FindOrderNumber,
   default: DefaultTask,
 };
