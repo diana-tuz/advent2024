@@ -7,7 +7,6 @@ import { DefaultTask } from "./DefaultTask";
 import { DuplicateDecorations } from "./DuplicateDecorations";
 import { ElfManipulator } from "./ElfManipulator";
 import { EncryptedLetter } from "./EncryptedLetter";
-import { FilterTasks } from "./FilterTasks";
 import { GeneratePrediction } from "./GeneratePrediction";
 import { LongestSongTitle } from "./LongestSongTitle";
 import { MovieSuggestion } from "./MovieSuggestion";
@@ -23,7 +22,9 @@ import { BudgetAssistant } from "./BudgetAssistant";
 import { CalculateShoppingList } from "./CalculateShoppingList";
 import { FindOrderNumber } from "./FindOrderNumber";
 import { GiftWrappingCommandCenter } from "./GiftWrapping";
+import { ManageCountdownCommand } from "./ManageCountdownCommand";
 import { TaskTemplatePropsType } from "./types";
+import { FilterTasks } from "./FilterTasks";
 
 export const TaskTemplate: FC<TaskTemplatePropsType> = ({
   variant = "1",
@@ -41,7 +42,7 @@ const tasks = {
   5: CocoaCraft,
   6: FilterTasks,
   7: ElfManipulator,
-  8: PopularGift,
+  8: ManageCountdownCommand,
   9: OrganizeGifts,
   10: GeneratePrediction,
   11: SecretSanta,
@@ -55,5 +56,6 @@ const tasks = {
   19: CalculateShoppingList,
   20: FindOrderNumber,
   21: GiftWrappingCommandCenter,
+  22: PopularGift,
   default: DefaultTask,
 };
