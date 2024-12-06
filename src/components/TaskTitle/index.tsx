@@ -7,7 +7,7 @@ import { TaskTitlePropsType } from "./types";
 export const TaskTitle: FC<TaskTitlePropsType> = ({
   title,
   onSave,
-  snowButton: { isON = true, onClick } = {},
+  snowButton: { isON, onClick } = {},
 }) => (
   <TitleContainer>
     <BackButton to={"/"} onClick={onSave}>
@@ -68,7 +68,7 @@ const SnowButtonContainer = styled.div`
   width: 200px;
 `;
 
-const SnowButton = styled.button<{ $isON: boolean }>`
+const SnowButton = styled.button<{ $isON?: boolean }>`
   display: flex;
   width: 60px;
   height: 25px;
@@ -79,7 +79,7 @@ const SnowButton = styled.button<{ $isON: boolean }>`
   justify-content: space-between;
 `;
 
-const Item = styled.div<{ $isON: boolean }>`
+const Item = styled.div<{ $isON?: boolean }>`
   width: 15px;
   height: 15px;
   background: snow;

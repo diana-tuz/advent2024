@@ -14,20 +14,24 @@ export const Task = () => {
 
   const variant = date && +date > +todayDate ? "default" : date;
   const isSnow = localStorage.getItem("isSnow");
+  const isSnowOff = localStorage.getItem("snowOff");
   const [isSnowing, setIsSnowing] = useState(!!isSnow);
 
   const onClick = () => {
     setIsSnowing(!isSnowing);
-    !isSnowing
-      ? localStorage.setItem("isSnow", "true")
-      : localStorage.removeItem("isSnow");
+    if (!isSnowing) {
+      localStorage.setItem("isSnow", "true");
+    } else {
+      localStorage.removeItem("isSnow"),
+        localStorage.setItem("snowOff", "true");
+    }
   };
   const snowButton = {
     isON: isSnowing,
     onClick,
   };
   useEffect(() => {
-    if (!isSnow) {
+    if (!isSnow && !isSnowOff) {
       localStorage.setItem("isSnow", "true");
     }
   }, []);
