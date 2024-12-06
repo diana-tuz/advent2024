@@ -20,11 +20,13 @@ import { WordOccurrences } from "./WordOccurrences";
 
 import { BudgetAssistant } from "./BudgetAssistant";
 import { CalculateShoppingList } from "./CalculateShoppingList";
+import { DistributingCandies } from "./DistributingCandies";
+import { FilterTasks } from "./FilterTasks";
 import { FindOrderNumber } from "./FindOrderNumber";
 import { GiftWrappingCommandCenter } from "./GiftWrapping";
 import { ManageCountdownCommand } from "./ManageCountdownCommand";
+import { ResolutionsTracker } from "./ResolutionsTracker";
 import { TaskTemplatePropsType } from "./types";
-import { FilterTasks } from "./FilterTasks";
 
 export const TaskTemplate: FC<TaskTemplatePropsType> = ({
   variant = "1",
@@ -57,5 +59,7 @@ const tasks = {
   20: FindOrderNumber,
   21: GiftWrappingCommandCenter,
   22: PopularGift,
+  23: ResolutionsTracker,
+  24: DistributingCandies,
   default: DefaultTask,
 };

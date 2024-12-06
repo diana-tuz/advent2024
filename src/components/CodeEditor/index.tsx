@@ -54,7 +54,7 @@ export const CodeEditor: FC<CodeEditorPropsType> = ({
                       {input}
                     </p>
                     <p>
-                      <Span>Output:</Span>
+                      <Span>Output: </Span>
                       {output ? output : "___"}
                     </p>
                     {expected && (
