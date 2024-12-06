@@ -1,3 +1,5 @@
+import { TestsDataType } from "./components/TestTemplate/types";
+
 export const christmasMovies = [
   {
     name: "Happiest Season",
@@ -441,3 +443,515 @@ export const secretSanta = [
   "Bogdan",
   "Nicola",
 ];
+
+export const tests: TestsDataType = {
+  29: {
+    title: "Can you ace this quiz? Prove it",
+    test: [
+      {
+        id: "q1",
+        question:
+          "What is the first step a browser takes when you enter a URL?",
+        answers: [
+          "Load the page from cache",
+          "Send a request to the DNS server",
+          "Render the HTML content",
+          "Establish a TCP connection",
+        ],
+      },
+      {
+        id: "q2",
+        question:
+          "Which protocol is used to secure communication between a browser and a server?",
+        answers: ["HTTP", "FTP", "HTTPS", "SMTP"],
+      },
+      {
+        id: "q3",
+        question: "What is the purpose of a DNS server?",
+        answers: [
+          "To store website content",
+          "To map domain names to IP addresses",
+          "To establish secure connections",
+          "To render HTML and CSS",
+        ],
+      },
+      {
+        id: "q4",
+        question:
+          "What does the browser do when it receives a 404 status code?",
+        answers: [
+          "Redirects the user to the homepage",
+          "Displays a 'Page Not Found' message",
+          "Reloads the page",
+          "Automatically retries the request",
+        ],
+      },
+      {
+        id: "q5",
+        question:
+          "Which of these HTTP methods is used to retrieve data from a server?",
+        answers: ["POST", "DELETE", "PUT", "GET"],
+      },
+      {
+        id: "q6",
+        question: "What is the main purpose of cookies?",
+        answers: [
+          "To store user sessions and preferences",
+          "To improve server performance",
+          "To optimize image rendering",
+          "To serve advertisements",
+        ],
+      },
+      {
+        id: "q7",
+        question: "What is the critical rendering path?",
+        answers: [
+          "The process of converting CSS into JavaScript",
+          "The sequence of steps the browser takes to render a webpage",
+          "The order of HTTP requests",
+          "The path of DNS resolution",
+        ],
+      },
+      {
+        id: "q8",
+        question: "What does 'cache' in a browser do?",
+        answers: [
+          "Stores frequently used files to speed up loading times",
+          "Processes JavaScript faster",
+          "Keeps track of user passwords",
+          "Runs CSS animations smoothly",
+        ],
+      },
+      {
+        id: "q9",
+        question: "What is the main function of an SSL certificate?",
+        answers: [
+          "To validate the server's IP address",
+          "To ensure secure communication between client and server",
+          "To increase website loading speed",
+          "To block spam emails",
+        ],
+      },
+      {
+        id: "q10",
+        question: "What happens during a TCP handshake?",
+        answers: [
+          "A secure connection is established using HTTPS",
+          "The browser and server exchange packets to establish a connection",
+          "The DNS server resolves the domain name",
+          "JavaScript code is executed by the browser",
+        ],
+      },
+      {
+        id: "q11",
+        question: "What does a Content Delivery Network (CDN) do?",
+        answers: [
+          "Ensures secure communication",
+          "Caches and delivers content from servers closer to the user",
+          "Handles DNS requests",
+          "Optimizes website design",
+        ],
+      },
+      {
+        id: "q12",
+        question:
+          "What does the DOM (Document Object Model) represent in a browser?",
+        answers: [
+          "The CSS styling structure of a webpage",
+          "The HTML structure of a webpage as a tree",
+          "The server's response time",
+          "The URL routing for a webpage",
+        ],
+      },
+    ],
+    correctAnswers: {
+      q1: "Send a request to the DNS server",
+      q2: "HTTPS",
+      q3: "To map domain names to IP addresses",
+      q4: "Displays a 'Page Not Found' message",
+      q5: "GET",
+      q6: "To store user sessions and preferences",
+      q7: "The sequence of steps the browser takes to render a webpage",
+      q8: "Stores frequently used files to speed up loading times",
+      q9: "To ensure secure communication between client and server",
+      q10: "The browser and server exchange packets to establish a connection",
+      q11: "Caches and delivers content from servers closer to the user",
+      q12: "The HTML structure of a webpage as a tree",
+    },
+  },
+  8: {
+    title: "How deep is your HTML knowledge? Take the test!",
+    test: [
+      {
+        id: "q1",
+        question: "What does the `meta` tag with `name='viewport'` do?",
+        answers: [
+          "Defines the document's title in the browser",
+          "Specifies the character encoding for the document",
+          "Controls the page's width and scaling on mobile devices",
+          "Preloads critical resources for faster loading",
+        ],
+      },
+      {
+        id: "q2",
+        question:
+          "Which attribute is required in the `<img>` tag to improve accessibility?",
+        answers: ["src", "alt", "width", "height"],
+      },
+      {
+        id: "q3",
+        question: "What is the purpose of the `role` attribute in HTML?",
+        answers: [
+          "To define a button's default action",
+          "To provide semantic meaning for accessibility tools",
+          "To specify the JavaScript behavior of an element",
+          "To style elements with CSS",
+        ],
+      },
+      {
+        id: "q4",
+        question: "What does the `rel` attribute in the `<link>` tag specify?",
+        answers: [
+          "The URL of the stylesheet",
+          "The relationship between the document and the linked resource",
+          "The media type of the linked resource",
+          "The MIME type of the resource",
+        ],
+      },
+      {
+        id: "q5",
+        question: "How does the `defer` attribute affect a `<script>` tag?",
+        answers: [
+          "Executes the script immediately upon parsing",
+          "Prevents the script from blocking HTML parsing and executes after the document is parsed",
+          "Loads the script only if the user interacts with the page",
+          "Loads the script after all images have been loaded",
+        ],
+      },
+      {
+        id: "q6",
+        question: "What is the difference between `<section>` and `<div>`?",
+        answers: [
+          "`<section>` adds semantic meaning, `<div>` does not",
+          "`<section>` is for styling, `<div>` is for structure",
+          "`<section>` is only for headers, `<div>` is for other elements",
+          "`<div>` is for semantic grouping, `<section>` is for styling",
+        ],
+      },
+      {
+        id: "q7",
+        question:
+          "What happens when you omit the `action` attribute in a `<form>` tag?",
+        answers: [
+          "The form data is sent to the current URL",
+          "The form data is not submitted",
+          "An error is thrown in the console",
+          "The browser redirects to the homepage",
+        ],
+      },
+      {
+        id: "q8",
+        question:
+          "Which HTML attribute is used to specify that an input field is mandatory?",
+        answers: ["required", "mandatory", "validate", "pattern"],
+      },
+      {
+        id: "q9",
+        question: "What does the `<picture>` element do?",
+        answers: [
+          "Provides multiple sources for an image, allowing for responsive images",
+          "Embeds video content on a page",
+          "Preloads images for faster rendering",
+          "Groups images together in a gallery",
+        ],
+      },
+      {
+        id: "q10",
+        question: "What is the difference between `<th>` and `<td>`?",
+        answers: [
+          "`<th>` is for table headers, `<td>` is for table data",
+          "`<th>` is used for styling rows, `<td>` is for styling columns",
+          "`<td>` contains metadata, `<th>` contains data",
+          "`<td>` is nested inside `<tr>`, `<th>` is not",
+        ],
+      },
+      {
+        id: "q11",
+        question: "Which HTML tag is used for embedding SVG graphics?",
+        answers: ["<embed>", "<img>", "<object>", "<svg>"],
+      },
+      {
+        id: "q12",
+        question: "Which attribute would you use to open a link in a new tab?",
+        answers: [
+          "target='_blank'",
+          "rel='noopener'",
+          "href='_new'",
+          "alt='new tab'",
+        ],
+      },
+    ],
+    correctAnswers: {
+      q1: "Controls the page's width and scaling on mobile devices",
+      q2: "alt",
+      q3: "To provide semantic meaning for accessibility tools",
+      q4: "The relationship between the document and the linked resource",
+      q5: "Prevents the script from blocking HTML parsing and executes after the document is parsed",
+      q6: "`<section>` adds semantic meaning, `<div>` does not",
+      q7: "The form data is sent to the current URL",
+      q8: "required",
+      q9: "Provides multiple sources for an image, allowing for responsive images",
+      q10: "`<th>` is for table headers, `<td>` is for table data",
+      q11: "<svg>",
+      q12: "target='_blank'",
+    },
+  },
+  15: {
+    title: "The ultimate CSS quiz: Beginner or master?",
+    test: [
+      {
+        id: "q1",
+        question: "What does the `z-index` property do?",
+        answers: [
+          "Specifies the opacity of an element",
+          "Defines the stacking order of elements",
+          "Sets the zoom level of an element",
+          "Aligns an element to the center of its container",
+        ],
+      },
+      {
+        id: "q2",
+        question:
+          "Which CSS property is used to make an element's children inherit the parent's grid layout?",
+        answers: ["display", "grid-template", "inherit", "grid"],
+      },
+      {
+        id: "q3",
+        question:
+          "What is the difference between `relative` and `absolute` positioning in CSS?",
+        answers: [
+          "`relative` positions an element relative to its normal flow, `absolute` positions it relative to its nearest positioned ancestor",
+          "`relative` keeps an element in the document flow, `absolute` removes it entirely",
+          "`relative` requires a `z-index`, `absolute` does not",
+          "`relative` is for inline elements, `absolute` is for block elements",
+        ],
+      },
+      {
+        id: "q4",
+        question:
+          "Which pseudo-class targets an element only when the mouse hovers over it?",
+        answers: [":hover", ":focus", ":active", ":visited"],
+      },
+      {
+        id: "q5",
+        question: "What does the `flex-grow` property do in a Flexbox layout?",
+        answers: [
+          "Determines the initial size of the element",
+          "Specifies the ability of an element to grow if necessary",
+          "Prevents the element from shrinking",
+          "Aligns the element along the main axis",
+        ],
+      },
+      {
+        id: "q6",
+        question:
+          "Which of the following is NOT a valid value for the `position` property?",
+        answers: ["relative", "absolute", "sticky", "inline"],
+      },
+      {
+        id: "q7",
+        question: "What is the difference between `em` and `rem` units?",
+        answers: [
+          "`em` is relative to the parent element's font size, `rem` is relative to the root element's font size",
+          "`em` is for block elements, `rem` is for inline elements",
+          "`em` requires a media query, `rem` does not",
+          "`em` is for pixels, `rem` is for percentages",
+        ],
+      },
+      {
+        id: "q8",
+        question:
+          "How can you apply styles only when the viewport is less than 768px wide?",
+        answers: [
+          "@media (max-width: 768px) { ... }",
+          "@viewport { max-width: 768px; }",
+          "@media (viewport-width < 768px) { ... }",
+          "viewport(max-width: 768px) { ... }",
+        ],
+      },
+      {
+        id: "q9",
+        question:
+          "What does the `content` property do in a `::before` or `::after` pseudo-element?",
+        answers: [
+          "Sets the text or content to be inserted",
+          "Controls the visibility of the element",
+          "Defines the text alignment",
+          "Specifies the z-index of the pseudo-element",
+        ],
+      },
+      {
+        id: "q10",
+        question: "What is the default value of the `overflow` property?",
+        answers: ["visible", "hidden", "scroll", "auto"],
+      },
+      {
+        id: "q11",
+        question:
+          "Which property allows you to specify how an element is resized in a Flexbox layout?",
+        answers: ["flex-basis", "resize", "align-content", "overflow"],
+      },
+      {
+        id: "q12",
+        question:
+          "How do you create a CSS variable and apply it to an element?",
+        answers: [
+          "Define with `--var-name: value;` and use with `var(--var-name)`",
+          "Define with `$var-name: value;` and use with `$var-name`",
+          "Define with `var-name: value;` and use with `--var-name`",
+          "Define with `@var-name: value;` and use with `@var-name`",
+        ],
+      },
+    ],
+    correctAnswers: {
+      q1: "Defines the stacking order of elements",
+      q2: "display",
+      q3: "`relative` positions an element relative to its normal flow, `absolute` positions it relative to its nearest positioned ancestor",
+      q4: ":hover",
+      q5: "Specifies the ability of an element to grow if necessary",
+      q6: "inline",
+      q7: "`em` is relative to the parent element's font size, `rem` is relative to the root element's font size",
+      q8: "@media (max-width: 768px) { ... }",
+      q9: "Sets the text or content to be inserted",
+      q10: "visible",
+      q11: "flex-basis",
+      q12: "Define with `--var-name: value;` and use with `var(--var-name)`",
+    },
+  },
+  22: {
+    title: "Test your skills: Do you really know JavaScript inside out?",
+    test: [
+      {
+        id: "q1",
+        question:
+          "What is the difference between `==` and `===` in JavaScript?",
+        answers: [
+          "`==` compares values only, `===` compares both values and types",
+          "`==` is used for strings, `===` is used for numbers",
+          "`==` performs strict equality, `===` performs loose equality",
+          "There is no difference between them",
+        ],
+      },
+      {
+        id: "q2",
+        question: "What will `typeof null` return?",
+        answers: ["'null'", "'undefined'", "'object'", "'boolean'"],
+      },
+      {
+        id: "q3",
+        question: "What does `Object.freeze()` do in JavaScript?",
+        answers: [
+          "Makes an object immutable, preventing addition, deletion, or modification of properties",
+          "Deletes all properties of an object",
+          "Converts an object into an array",
+          "Freezes the memory allocated to an object",
+        ],
+      },
+      {
+        id: "q4",
+        question: "What is a closure in JavaScript?",
+        answers: [
+          "A function that remembers the scope in which it was created, even after that scope is destroyed",
+          "A way to close all functions within a scope",
+          "A mechanism to execute asynchronous code",
+          "A special function used only in object-oriented programming",
+        ],
+      },
+      {
+        id: "q5",
+        question:
+          "Which of the following is NOT a valid way to declare a variable?",
+        answers: ["var", "let", "const", "define"],
+      },
+      {
+        id: "q6",
+        question: "What is the purpose of the `async` keyword in JavaScript?",
+        answers: [
+          "To define a function that always returns a promise",
+          "To execute a function immediately",
+          "To pause the execution of a function",
+          "To declare a function as synchronous",
+        ],
+      },
+      {
+        id: "q7",
+        question:
+          "What will be logged to the console? \n\n```js\nconst a = [1, 2, 3];\nconst b = a;\nb.push(4);\nconsole.log(a);\n```",
+        answers: ["[1, 2, 3]", "[1, 2, 3, 4]", "undefined", "Error"],
+      },
+      {
+        id: "q8",
+        question:
+          "What is the output of: \n\n```js\nconsole.log([] + []);\n```",
+        answers: ["'' (empty string)", "undefined", "0", "Error"],
+      },
+      {
+        id: "q9",
+        question: "What does the `bind` method do in JavaScript?",
+        answers: [
+          "Creates a new function with a specific `this` context",
+          "Executes a function immediately",
+          "Creates a copy of an object",
+          "Binds an object to an array",
+        ],
+      },
+      {
+        id: "q10",
+        question:
+          "Which of the following methods can be used to iterate over an array?",
+        answers: [
+          "map(), filter(), reduce()",
+          "forEach(), map(), splice()",
+          "reduce(), pop(), for()",
+          "push(), shift(), slice()",
+        ],
+      },
+      {
+        id: "q11",
+        question:
+          "What is the difference between function declarations and function expressions?",
+        answers: [
+          "Declarations are hoisted, expressions are not",
+          "Expressions are hoisted, declarations are not",
+          "Expressions can only be anonymous",
+          "Declarations can only be used within objects",
+        ],
+      },
+      {
+        id: "q12",
+        question:
+          "What is the purpose of the `setTimeout` function in JavaScript?",
+        answers: [
+          "To execute a function after a specified delay",
+          "To run a function only once",
+          "To pause code execution",
+          "To call a function at regular intervals",
+        ],
+      },
+    ],
+    correctAnswers: {
+      q1: "`==` compares values only, `===` compares both values and types",
+      q2: "'object'",
+      q3: "Makes an object immutable, preventing addition, deletion, or modification of properties",
+      q4: "A function that remembers the scope in which it was created, even after that scope is destroyed",
+      q5: "define",
+      q6: "To define a function that always returns a promise",
+      q7: "[1, 2, 3, 4]",
+      q8: "'' (empty string)",
+      q9: "Creates a new function with a specific `this` context",
+      q10: "map(), filter(), reduce()",
+      q11: "Declarations are hoisted, expressions are not",
+      q12: "To execute a function after a specified delay",
+    },
+  },
+};
